@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="HomeTitleName">熊猫直播</string>
+    <string name="HomeTabhome">首页</string>
+    <string name="HomeTabpandalive">熊猫直播</string>
+    <string name="HomeTabRollingVideo">滚滚视频</string>
+    <string name="HomeTabPandaReport">熊猫播报</string>
+    <string name="HomeTabliveChian">直播中国</string>
+
+
+</resources>

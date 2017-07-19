@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <fm.jiecao.jcvideoplayer_lib.JCVideoPlayer
+        android:id="@+id/videocontroller1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/live_title"
+            android:textColor="@color/black"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="[正在直播]成都基地高清精切线路"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/live_title"
+            android:text="简介"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView" />
+        <CheckBox
+            android:id="@+id/live_checkbox"
+            android:button="@null"
+            android:background="@drawable/pandalive_checkbox_selector"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBottom="@+id/textView" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:visibility="gone"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp"
+                android:textSize="15dp"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:text="翻身、吃饭、睡觉、喝奶、打闹、攀爬……这里是成都大熊猫繁育研究基地，24小时高清直播大熊猫生活实况的地方。成年园、幼儿园、母子园、一号别墅,11路直播信28个摄像头,让你零距离了解国宝们的日常起居."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.design.widget.TabLayout
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

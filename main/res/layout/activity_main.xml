@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_heightPercent="100%"
+    app:layout_widthPercent="100%"
+    tools:context="com.example.myapplication.activity.MainActivity">
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/Home_Rl_homeTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/HomeTitle"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="100%"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/panda_sign"
+            app:layout_heightPercent="80%" />
+
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            app:layout_widthPercent="25%">
+
+            <ImageView
+                android:id="@+id/Home_Iv_Original"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/hudong_sign" />
+
+            <ImageView
+                android:id="@+id/Home_Iv_Personal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/person_sign" />
+
+        </com.zhy.android.percent.support.PercentLinearLayout>
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/Home_Rl_liveTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="100%"
+        android:background="@color/HomeTitle"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/Home_Tv_TitleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/HomeTitleName"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/Home_Iv_livePersonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/person_sign" />
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    <com.zhy.android.percent.support.PercentFrameLayout
+        android:id="@+id/Home_ComtentGroup"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="100%"
+        app:layout_widthPercent="100%"
+        android:layout_weight="1">
+
+    </com.zhy.android.percent.support.PercentFrameLayout>
+
+    <RadioGroup
+        android:id="@+id/Home_RadioGrop"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <RadioButton
+            android:id="@+id/HomeTab_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/home_tab"
+            android:gravity="center"
+            android:text="@string/HomeTabhome" />
+
+        <RadioButton
+            android:id="@+id/HomeTab_pandalive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/home_tab_pandalive"
+            android:gravity="center"
+            android:text="@string/HomeTabpandalive" />
+
+        <RadioButton
+            android:id="@+id/HomeTab_rollingvideo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/home_tab_rollingvideo"
+            android:gravity="center"
+            android:text="@string/HomeTabRollingVideo" />
+
+
+        <RadioButton
+            android:id="@+id/HomeTab_pandareport"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/home_tab_pandareport"
+            android:gravity="center"
+            android:text="@string/HomeTabPandaReport" />
+
+        <RadioButton
+            android:id="@+id/HomeTab_livechian"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/home_tab_livechian"
+            android:gravity="center"
+            android:text="@string/HomeTabliveChian" />
+    </RadioGroup>
+
+</com.zhy.android.percent.support.PercentLinearLayout>
