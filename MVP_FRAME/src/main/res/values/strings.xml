@@ -7,6 +7,9 @@
     <string name="HomeTabRollingVideo">滚滚视频</string>
     <string name="HomeTabPandaReport">熊猫播报</string>
     <string name="HomeTabliveChian">直播中国</string>
+    <string name="Homeitemlives">直播秀场</string>
+    <string name="HomeitemAmazing">精彩一刻</string>
+    <string name="HomeitemliveChain">直播中国</string>
 
 
 </resources>

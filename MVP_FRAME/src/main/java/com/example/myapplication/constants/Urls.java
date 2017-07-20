@@ -9,8 +9,8 @@ package com.example.myapplication.constants;
 public class Urls {
     //服务器地址
     public static final String BASEURL = "http://www.ipanda.com/kehuduan/";
-    //首页数据
-    public static final String HOMEURLALL = "http://www.ipanda.com/kehuduan/PAGE14501749764071042/index.json";
+    //首页数据 http://www.ipanda.com/kehuduan/PAGE14501749764071042/index.json
+    public static final String HOMEURLALL = "http://www.ipanda.com/kehuduan/shouye/index.json";
     //滚滚视频
     public static final String ROLLVIDEO = BASEURL + "xmwh/index.json";
     //直播中国

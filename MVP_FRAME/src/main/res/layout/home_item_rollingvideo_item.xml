@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="22%"
+        app:layout_widthPercent="100%">
+
+
+        <ImageView
+            android:id="@+id/home_item_Rolling_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="45%" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/lpanda_bottom_gra"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="20%" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/home_play_icon"
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="8%" />
+
+        <TextView
+            android:id="@+id/Home_item_Rolling_time"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="24dp"
+            android:text="00:35"
+            android:textColor="@color/White"
+            app:layout_heightPercent="16%"
+            app:layout_widthPercent="20%" />
+
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/home_item_Rolling_image"
+            android:layout_toRightOf="@+id/home_item_Rolling_image"
+            android:orientation="vertical"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="100%">
+
+            <TextView
+                android:id="@+id/Home_item_Rolling_body"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="《熊猫TOP榜》 有这样的奶爸妈妈，欢乐一夏"
+                android:textSize="16sp"
+                app:layout_heightPercent="60%"
+                app:layout_widthPercent="100%" />
+
+            <TextView
+                android:id="@+id/Home_item_Rolling_bodytime"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center|left"
+                android:text="2017-7-19"
+                app:layout_heightPercent="30%"
+                app:layout_widthPercent="100%" />
+
+        </com.zhy.android.percent.support.PercentLinearLayout>
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

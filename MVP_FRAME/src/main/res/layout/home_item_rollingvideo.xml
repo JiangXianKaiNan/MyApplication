@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/HomeTabRollingVideo"
+        android:textColor="@color/HomeTitle"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        app:layout_heightPercent="5%"
+        app:layout_widthPercent="25%" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/darkgray" />
+
+    <ListView
+        android:id="@+id/Home_item_RollongVideo_ListView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="100%"
+        app:layout_widthPercent="100%"
+        >
+
+    </ListView>
+
+
+</com.zhy.android.percent.support.PercentLinearLayout>

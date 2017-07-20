@@ -41,7 +41,7 @@ public class HttpUtils implements IHttp {
     // http://www.qq.com?name=xxx&pwd=xxx;
     @Override
     public <T> void get(String url, Map<String, String> params, final MyCallBack<T> callBack) {
-    if (params != null) {
+        if (params != null) {
             StringBuffer sb = new StringBuffer(url);
             sb.append("?");
             Set<String> set = params.keySet();
@@ -51,34 +51,35 @@ public class HttpUtils implements IHttp {
             }
 
             url = sb.deleteCharAt(sb.length() - 1).toString();
-            Request request = new Request.Builder().url(url).build();
-            mOkHttpClient.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(Call call, final IOException e) {
-                    MyApp.mContext.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            callBack.onFaile(e.getMessage());
-                        }
-                    });
-                }
-
-
-                @Override
-                public void onResponse(Call call, Response response) throws IOException {
-                    final String jsonData = response.body().string();
-                    MyApp.mContext.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            callBack.onSuccess(getGeneric(jsonData, callBack));
-
-                        }
-                    });
-                }
-            });
-
-
         }
+
+        Request request = new Request.Builder().url(url).build();
+        mOkHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, final IOException e) {
+                MyApp.mContext.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        callBack.onFaile(e.getMessage());
+                    }
+                });
+            }
+
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                final String jsonData = response.body().string();
+                MyApp.mContext.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        callBack.onSuccess(getGeneric(jsonData, callBack));
+
+                    }
+                });
+            }
+        });
+
+
     }
 
     /**

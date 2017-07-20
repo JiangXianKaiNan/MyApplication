@@ -1,6 +1,7 @@
 package com.example.myapplication.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -9,7 +10,9 @@ import android.widget.TextView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseActivity;
+import com.example.myapplication.base.BaseFragment;
 import com.example.myapplication.config.FragmentBuilder;
+import com.example.myapplication.global.MyApp;
 import com.example.myapplication.module.home.HomeFragment;
 import com.zhy.android.percent.support.PercentFrameLayout;
 import com.zhy.android.percent.support.PercentRelativeLayout;
@@ -47,6 +50,8 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.Home_RadioGrop)
     RadioGroup HomeRadioGrop;
 
+    private FragmentManager fragmentManager = getSupportFragmentManager();
+
 
 
     @Override
@@ -78,14 +83,10 @@ public class MainActivity extends BaseActivity {
             case R.id.Home_Iv_Original:// 原创·互动
                 break;
             case R.id.Home_Iv_Personal://个人中心
-
                 break;
             case R.id.Home_Iv_livePersonal:// 其他页面的个人中心
-
                 break;
             case R.id.HomeTab_home:// 首页
-
-
                 FragmentBuilder.getInstance().init().start(HomeFragment.class).build();
                 HomeRlHomeTitle.setVisibility(View.VISIBLE);
                 HomeRlLiveTitle.setVisibility(View.GONE);
@@ -114,6 +115,29 @@ public class MainActivity extends BaseActivity {
                 HomeTvTitleName.setText("直播中国");
                 HomeRlLiveTitle.setVisibility(View.VISIBLE);
                 break;
+        }
+    }
+
+    /**
+     * 自定义回退栈管理；
+     * 获取栈顶的fragment的名字，判断名字是否和主页的名字是否一样，
+     * 如果一样就退出应用，如果不是就回退上一个fragment；
+     */
+    @Override
+    public void onBackPressed() {
+        String simpleName = fragmentManager.getBackStackEntryAt(fragmentManager.getBackStackEntryCount() - 1).getName();
+        if ("HomeFragment".equals(simpleName) ||
+                "TweetFragment".equals(simpleName) ||
+                "FindFragment".equals(simpleName) ||
+                "MyFragment".equals(simpleName)) {
+
+            finish();
+        } else {
+            if (fragmentManager.getBackStackEntryCount() > 1) {
+                fragmentManager.popBackStackImmediate();//
+                String name = fragmentManager.getBackStackEntryAt(fragmentManager.getBackStackEntryCount() - 1).getName();
+                MyApp.lastfragment = (BaseFragment) fragmentManager.findFragmentByTag(name);
+            }
         }
     }
 
