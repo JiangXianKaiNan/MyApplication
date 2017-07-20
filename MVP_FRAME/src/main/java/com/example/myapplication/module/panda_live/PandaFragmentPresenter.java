@@ -1,7 +1,10 @@
 package com.example.myapplication.module.panda_live;
 
+import android.util.Log;
+
 import com.example.myapplication.model.PandaChannelModelImp;
-import com.example.myapplication.model.bean.LiveChinaBean;
+import com.example.myapplication.model.bean.MultiBean;
+import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.network.MyCallBack;
 
 /**
@@ -29,13 +32,27 @@ public class PandaFragmentPresenter implements PandaLiveContract.PandaLivePresen
 
     @Override
     public void start() {
-        mPandaChannelModelImp.getLiveData(new MyCallBack<LiveChinaBean>() {
+        Log.e("-***----","456456456");
+        mPandaChannelModelImp.getPandaLiveData(new MyCallBack<PandaLiveBean>() {
             @Override
-            public void onSuccess(LiveChinaBean liveChinaBean) {
-            //TODO 交给View层更新UI
+            public void onSuccess(PandaLiveBean pandaLiveBean) {
+                Log.e("网络请求_________",pandaLiveBean.toString());
 
+                //TODO 交给View层更新UI
+                mPandaLiveView.setResultData(pandaLiveBean);
             }
 
+
+            @Override
+            public void onFaile(String msg) {
+
+            }
+        });
+        mPandaChannelModelImp.getMultiData(new MyCallBack<MultiBean>() {
+            @Override
+            public void onSuccess(MultiBean multiBean) {
+                mPandaLiveView.setResultData(multiBean);
+            }
 
             @Override
             public void onFaile(String msg) {

@@ -1,40 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <fm.jiecao.jcvideoplayer_lib.JCVideoPlayer
-        android:id="@+id/videocontroller1"
+    <ImageView
+        android:id="@+id/Iamge_video"
         android:layout_width="match_parent"
         android:layout_height="200dp" />
+
     <RelativeLayout
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/live_title"
-            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:text="[正在直播]成都基地高清精切线路"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/black" />
+
         <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/live_title"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="2dp"
-            android:layout_below="@+id/live_title"
-            android:text="简介"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView" />
+            android:text="简介" />
+
         <CheckBox
             android:id="@+id/live_checkbox"
-            android:button="@null"
-            android:background="@drawable/pandalive_checkbox_selector"
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:layout_alignBottom="@+id/textView"
             android:layout_alignTop="@+id/textView"
             android:layout_centerHorizontal="true"
-            android:layout_alignBottom="@+id/textView" />
+            android:background="@drawable/pandalive_checkbox_selector"
+            android:button="@null" />
 
     </RelativeLayout>
 
@@ -46,9 +53,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
+                android:background="@color/white"
+                android:id="@+id/live_Introduction"
                 android:visibility="gone"
                 android:layout_marginBottom="1dp"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="3dp"
                 android:textSize="15dp"
                 android:padding="15dp"
                 android:textColor="@color/black"
@@ -56,10 +65,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <android.support.design.widget.TabLayout
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
+
+                android:id="@+id/live_tablayout"
+                android:layout_marginTop="2dp"
+                android:background="@color/white"
+                app:tabTextAppearance="@style/TabText"
+                app:tabIndicatorColor="@color/HomeTitle"
+                app:tabSelectedTextColor="@color/HomeTitle"
+                app:tabTextColor="@color/black"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/live_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
 
         </LinearLayout>

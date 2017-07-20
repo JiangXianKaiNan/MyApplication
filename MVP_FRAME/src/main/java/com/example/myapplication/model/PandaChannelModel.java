@@ -8,13 +8,10 @@ import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.OriginalBean;
 import com.example.myapplication.model.bean.PandaBroadBean;
 import com.example.myapplication.model.bean.PandaBroadTwoBean;
+import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.model.bean.RollRollVideoBean;
 import com.example.myapplication.model.bean.WinderfulBean;
 import com.example.myapplication.network.MyCallBack;
-
-import java.util.Map;
-
-import okhttp3.Callback;
 
 /**
  * 爱生活，爱代码
@@ -99,4 +96,10 @@ public interface PandaChannelModel {
      * @param callBack
      */
     void getWinderfulData(MyCallBack<WinderfulBean> callBack);
+
+    /**
+     * 熊猫直播
+     * @param callBack
+     */
+    void getPandaLiveData(MyCallBack<PandaLiveBean> callBack);
 }

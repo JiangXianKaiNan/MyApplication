@@ -9,10 +9,10 @@ import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.OriginalBean;
 import com.example.myapplication.model.bean.PandaBroadBean;
 import com.example.myapplication.model.bean.PandaBroadTwoBean;
+import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.model.bean.RollRollVideoBean;
 import com.example.myapplication.model.bean.WinderfulBean;
 import com.example.myapplication.network.HttpFactory;
-import com.example.myapplication.network.IHttp;
 import com.example.myapplication.network.MyCallBack;
 
 import java.util.HashMap;
@@ -89,5 +89,12 @@ public class PandaChannelModelImp implements PandaChannelModel {
         pamrams.put("", "");
         HttpFactory.create().get(Urls.ORIGINALNEWS, pamrams, callBack);
     }
+
+    @Override
+    public void getPandaLiveData(MyCallBack<PandaLiveBean> callBack) {
+        HttpFactory.create().get(Urls.PANDALIVE, null, callBack);
+    }
+
+
 
 }
