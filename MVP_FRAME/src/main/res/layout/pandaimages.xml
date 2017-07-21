@@ -19,8 +19,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="10dp"
+            android:id="@+id/titletext"
             android:layout_margin="5dp"
-            android:text="大熊猫让海峡两岸越走越亲"
+
             android:textColor="#ffff"
             android:layout_alignParentBottom="true"/>
 

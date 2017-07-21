@@ -7,9 +7,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseFragment;
+import com.example.myapplication.model.bean.PandaBroadBean;
 import com.example.myapplication.model.bean.PandaBroadTwoBean;
 import com.google.gson.Gson;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -33,6 +36,8 @@ class PandaFragment extends BaseFragment {
     private ImageView image;
     int page=2;
     private XRecyclerView xrecyclerView;
+    private MyAdapter myAdapter;
+    private TextView text;
 
     public void initdata() {
         new Thread() {
@@ -60,7 +65,7 @@ class PandaFragment extends BaseFragment {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                MyAdapter myAdapter = new MyAdapter(getActivity(), liveBeen);
+                                myAdapter = new MyAdapter(getActivity(), liveBeen);
                                 xrecyclerView.setAdapter(myAdapter);
                                 myAdapter.setOnItem(new MyAdapter.OnItem() {
                                     @Override
@@ -90,6 +95,8 @@ class PandaFragment extends BaseFragment {
     protected void initView(View view) {
         final View inflate = LayoutInflater.from(getActivity()).inflate(R.layout.pandaimages, null);
         image = (ImageView) inflate.findViewById(R.id.imag);
+        text = (TextView) inflate.findViewById(R.id.titletext);
+        initData();
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,9 +116,9 @@ class PandaFragment extends BaseFragment {
                 xrecyclerView.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-
-                        page=2;
+                        page=1;
                         initdata();
+                        myAdapter.notifyDataSetChanged();
                         xrecyclerView.refreshComplete();
                     }
 
@@ -123,9 +130,9 @@ class PandaFragment extends BaseFragment {
                 xrecyclerView.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-
                         page  ++;
                         initdata();
+                        myAdapter.notifyDataSetChanged();
                         xrecyclerView.loadMoreComplete();
                     }
 
@@ -139,7 +146,38 @@ class PandaFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+           new Thread(){
+               @Override
+               public void run() {
+                   String path="http://www.ipanda.com/kehuduan/news/index.json";
+                   OkHttpClient okHttpClient = new OkHttpClient();
+                   Request request=new Request.Builder().url(path).build();
+                   Callback callback=new Callback() {
+                       @Override
+                       public void onFailure(Call call, IOException e) {
 
+                       }
+
+                       @Override
+                       public void onResponse(Call call, Response response) throws IOException {
+                           String string = response.body().string();
+                           Gson gson = new Gson();
+                           final PandaBroadBean pandaBroadBean = gson.fromJson(string, PandaBroadBean.class);
+                           getActivity().runOnUiThread(new Runnable() {
+                               @Override
+                               public void run() {
+                                   for (int i = 0; i < pandaBroadBean.getData().getBigImg().size(); i++) {
+                                       Glide.with(PandaFragment.this).load(pandaBroadBean.getData().getBigImg().get(i).getImage()).into(image);
+                                       text.setText(pandaBroadBean.getData().getBigImg().get(i).getTitle());
+                                   }
+
+                               }
+                           });
+                       }
+                   };
+                   okHttpClient.newCall(request).enqueue(callback);
+               }
+           }.start();
     }
 
     @Override
