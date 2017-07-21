@@ -9,8 +9,10 @@ import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.OriginalBean;
 import com.example.myapplication.model.bean.PandaBroadBean;
 import com.example.myapplication.model.bean.PandaBroadTwoBean;
+import com.example.myapplication.model.bean.PandaFragmentlistData;
 import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.model.bean.RollRollVideoBean;
+import com.example.myapplication.model.bean.TableListBaen;
 import com.example.myapplication.model.bean.WinderfulBean;
 import com.example.myapplication.network.HttpFactory;
 import com.example.myapplication.network.MyCallBack;
@@ -95,6 +97,15 @@ public class PandaChannelModelImp implements PandaChannelModel {
         HttpFactory.create().get(Urls.PANDALIVE, null, callBack);
     }
 
+    @Override
+    public void getTablelistData(MyCallBack<TableListBaen> callBack) {
+        HttpFactory.create().get(Urls.TABLELIST, null, callBack);
+    }
+
+    @Override
+    public void getPandaFragmentlistData(Map<String, String> map, MyCallBack<PandaFragmentlistData> callBack) {
+        HttpFactory.create().get(Urls.PANDAFRAGMENTDATA, map, callBack);
+    }
 
 
 }

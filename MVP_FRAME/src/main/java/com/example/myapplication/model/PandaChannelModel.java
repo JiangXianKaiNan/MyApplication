@@ -8,10 +8,14 @@ import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.OriginalBean;
 import com.example.myapplication.model.bean.PandaBroadBean;
 import com.example.myapplication.model.bean.PandaBroadTwoBean;
+import com.example.myapplication.model.bean.PandaFragmentlistData;
 import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.model.bean.RollRollVideoBean;
+import com.example.myapplication.model.bean.TableListBaen;
 import com.example.myapplication.model.bean.WinderfulBean;
 import com.example.myapplication.network.MyCallBack;
+
+import java.util.Map;
 
 /**
  * 爱生活，爱代码
@@ -102,4 +106,16 @@ public interface PandaChannelModel {
      * @param callBack
      */
     void getPandaLiveData(MyCallBack<PandaLiveBean> callBack);
+
+    /**
+     * 熊猫直播列表
+     * @param callBack
+     */
+    void getTablelistData(MyCallBack<TableListBaen> callBack);
+
+    /**
+     * 熊猫直播faragmentdata
+     * @param callBack
+     */
+    void getPandaFragmentlistData(Map<String,String> map, MyCallBack<PandaFragmentlistData> callBack);
 }

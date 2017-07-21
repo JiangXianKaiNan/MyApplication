@@ -11,12 +11,13 @@ import java.util.List;
  */
 
 public class PandaLive_PagerAdapter extends FragmentPagerAdapter{
-    String[] strings = new String[]{"直播","精彩时刻","当熊不让","超萌滚滚秀","熊猫档案","熊猫TOP榜","熊猫那些事","特别节目","原创新闻"};
-    private List<Fragment> list;
 
-    public PandaLive_PagerAdapter(FragmentManager fm, List<Fragment> list) {
+    private List<Fragment> list;
+    private  List<String> titles;
+    public PandaLive_PagerAdapter(FragmentManager fm, List<Fragment> list, List<String> titles) {
         super(fm);
         this.list = list;
+        this.titles = titles;
     }
 
 
@@ -32,6 +33,6 @@ public class PandaLive_PagerAdapter extends FragmentPagerAdapter{
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return strings[position];
+        return titles.get(position);
     }
 }

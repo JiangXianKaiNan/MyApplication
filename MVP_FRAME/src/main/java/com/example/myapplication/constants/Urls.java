@@ -36,4 +36,7 @@ public class Urls {
     //精彩一刻
     public static final String ORIGINALNEWS = "http://api.cntv.cn/video/videolistById";
 
+    public static  final String PANDAFRAGMENTDATA = "http://api.cntv.cn/video/videolistById";
+//  熊猫直播tablelist
+    public static  final String TABLELIST = "http://www.ipanda.com/kehuduan/PAGE14501772263221982/index.json";
 }

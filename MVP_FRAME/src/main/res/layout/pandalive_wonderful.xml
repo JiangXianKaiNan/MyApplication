@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
-</LinearLayout>
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+
+        android:background="@color/binglan"
+        android:id="@+id/pandalive_wonderful_listview"
+        android:layout_weight="1"
+        app:layout_heightPercent="100%w"
+        app:layout_widthPercent="100%w"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</com.zhy.android.percent.support.PercentLinearLayout>

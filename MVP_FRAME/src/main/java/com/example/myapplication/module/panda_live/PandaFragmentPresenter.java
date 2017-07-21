@@ -5,6 +5,7 @@ import android.util.Log;
 import com.example.myapplication.model.PandaChannelModelImp;
 import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.PandaLiveBean;
+import com.example.myapplication.model.bean.TableListBaen;
 import com.example.myapplication.network.MyCallBack;
 
 /**
@@ -59,6 +60,16 @@ public class PandaFragmentPresenter implements PandaLiveContract.PandaLivePresen
 
             }
         });
+        mPandaChannelModelImp.getTablelistData(new MyCallBack<TableListBaen>() {
+            @Override
+            public void onSuccess(TableListBaen tableListBaen) {
+                mPandaLiveView.setPandatablelist(tableListBaen);
+            }
 
+            @Override
+            public void onFaile(String msg) {
+
+            }
+        });
     }
 }

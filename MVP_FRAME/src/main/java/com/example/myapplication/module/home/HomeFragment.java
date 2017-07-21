@@ -2,9 +2,7 @@ package com.example.myapplication.module.home;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseFragment;
@@ -12,8 +10,6 @@ import com.example.myapplication.model.bean.HomeDataBean;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * 爱生活，爱代码
@@ -64,10 +60,4 @@ public class HomeFragment extends BaseFragment implements HomeContract.HomeView 
 
     }
 
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
 }
