@@ -9,6 +9,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+
+import com.example.myapplication.Home_Iv_Personal_Fragment;
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseActivity;
 import com.example.myapplication.base.BaseFragment;
@@ -22,6 +24,7 @@ import com.zhy.android.percent.support.PercentRelativeLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.Request;
 
 public class MainActivity extends BaseActivity {
 
@@ -65,7 +68,7 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         FragmentBuilder.getInstance().init().start(HomeFragment.class).build();
         HomeRlHomeTitle.setVisibility(View.VISIBLE);
-//        HomeRlLiveTitle.setVisibility(View.GONE);
+//     View   HomeRlLiveTitle.setVisibility(View.GONE);
 
     }
 
@@ -85,7 +88,7 @@ public class MainActivity extends BaseActivity {
             case R.id.Home_Iv_Original:// 原创·互动
                 break;
             case R.id.Home_Iv_Personal://个人中心
-
+                FragmentBuilder.getInstance().init().start(Home_Iv_Personal_Fragment.class).build();
                 break;
             case R.id.Home_Iv_livePersonal:// 其他页面的个人中心
 

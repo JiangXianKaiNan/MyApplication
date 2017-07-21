@@ -62,7 +62,7 @@ class PandaFragment extends BaseFragment {
                         List<PandaBroadTwoBean.ListBean> live = pandaBroadTwoBean.getList();
                         liveBeen = new ArrayList<PandaBroadTwoBean.ListBean>();
                         liveBeen.addAll(live);
-                        getActivity().runOnUiThread(new Runnable() {
+                            getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 myAdapter = new MyAdapter(getActivity(), liveBeen);

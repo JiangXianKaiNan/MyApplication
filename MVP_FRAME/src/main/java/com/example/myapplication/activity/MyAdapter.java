@@ -47,7 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Horder> implements
         holder.textView.setText(list.get(position).getTitle());
         Glide.with(context).load(list.get(position).getPicurl()).into(holder.imageView);
             holder.shijian.setText(list.get(position).getFocus_date()+"");
-        holder.itemView.setTag(position);
+            holder.itemView.setTag(position);
     }
 
 
@@ -80,10 +80,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Horder> implements
     public void onClick(View v) {
         if(onItem!=null){
             Integer inte= (Integer) v.getTag();
-
             onItem.onItemClick(inte);
-
-
         }
     }
 

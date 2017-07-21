@@ -16,7 +16,7 @@ public class PandaVideo extends BaseActivity {
     protected void initView() {
         JCVideoPlayer videoView = (JCVideoPlayer)findViewById(R.id.videocontroller1);
 
-        videoView.setUp("http://2449.vod.myqcloud.com/2449_43b6f696980311e59ed467f22794e792.f20.mp4 ", "王强强");
+        videoView.setUp("http://cntv.vod.cdn.myqcloud.com/flash/mp4video61/TMS/2017/07/20/429732b855b24e95ad208807174eb85c_h2641200000nero_aac16-1.mp4", "王强");
         videoView.ivThumb.setImageResource(R.drawable.def_no_play);
     }
 
