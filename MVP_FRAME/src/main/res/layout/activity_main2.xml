@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Pandaparticulars">
+<WebView
+    app:layout_heightPercent="90%"
+    app:layout_widthPercent="100%"
+    android:id="@+id/webview"
+
+   ></WebView>
+    <LinearLayout
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="100%"
+        android:orientation="horizontal"
+        android:id="@+id/line1"
+        android:layout_below="@+id/webview"
+        android:layout_alignParentBottom="true">
+    <ImageView
+        android:id="@+id/shouchang"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:src="@drawable/collect_no"/>
+        <ImageView
+            android:id="@+id/fenxiang"
+            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/pe_share_img"/>
+    </LinearLayout>
+</android.support.percent.PercentRelativeLayout>

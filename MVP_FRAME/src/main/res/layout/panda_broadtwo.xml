@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rall_shap"
+    >
+<ImageView
+
+   android:layout_height="100dp"
+    android:layout_width="155dp"
+    android:id="@+id/images"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:layout_marginLeft="160dp"
+            android:text="王小帅"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/shijian"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="80dp"
+            android:textSize="10dp"
+            android:text="王小帅"/>
+
+</android.support.percent.PercentRelativeLayout>
