@@ -14,9 +14,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/HomeTitle"
-        app:layout_heightPercent="10%"
+        app:layout_heightPercent="8%"
         app:layout_widthPercent="100%"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
         android:id="@+id/Home_Rl_liveTitle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_heightPercent="10%"
+        app:layout_heightPercent="8%"
         app:layout_widthPercent="100%"
         android:background="@color/HomeTitle"
         android:visibility="gone"

@@ -2,18 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/binglan"
     android:orientation="vertical">
 
     <android.support.design.widget.TabLayout
+        app:tabTextAppearance="@style/TabText"
+        app:tabIndicatorColor="@color/HomeTitle"
+        app:tabSelectedTextColor="@color/HomeTitle"
+        app:tabTextColor="@color/black"
+        android:background="@color/white"
         android:id="@+id/pandalive_tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp" />
 
-    <FrameLayout
-        android:id="@+id/pandalive_framelayout"
+    <com.example.myapplication.view.MViewpager
+        android:id="@+id/pandalive_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </FrameLayout>
+    </com.example.myapplication.view.MViewpager>
 </LinearLayout>

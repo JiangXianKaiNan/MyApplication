@@ -15,6 +15,7 @@ import com.example.myapplication.base.BaseFragment;
 import com.example.myapplication.config.FragmentBuilder;
 import com.example.myapplication.global.MyApp;
 import com.example.myapplication.module.home.HomeFragment;
+import com.example.myapplication.module.panda_live.PandaLiveFragment;
 import com.zhy.android.percent.support.PercentFrameLayout;
 import com.zhy.android.percent.support.PercentRelativeLayout;
 
@@ -84,10 +85,14 @@ public class MainActivity extends BaseActivity {
             case R.id.Home_Iv_Original:// 原创·互动
                 break;
             case R.id.Home_Iv_Personal://个人中心
+
                 break;
             case R.id.Home_Iv_livePersonal:// 其他页面的个人中心
+
                 break;
             case R.id.HomeTab_home:// 首页
+
+
                 FragmentBuilder.getInstance().init().start(HomeFragment.class).build();
                 HomeRlHomeTitle.setVisibility(View.VISIBLE);
                 HomeRlLiveTitle.setVisibility(View.GONE);
@@ -97,6 +102,7 @@ public class MainActivity extends BaseActivity {
                 HomeRlHomeTitle.setVisibility(View.GONE);
                 HomeTvTitleName.setText("熊猫直播");
                 HomeRlLiveTitle.setVisibility(View.VISIBLE);
+                FragmentBuilder.getInstance().init().start(PandaLiveFragment.class).build();
                 break;
             case R.id.HomeTab_rollingvideo:// 滚滚视频
 
@@ -128,7 +134,7 @@ public class MainActivity extends BaseActivity {
     public void onBackPressed() {
         String simpleName = fragmentManager.getBackStackEntryAt(fragmentManager.getBackStackEntryCount() - 1).getName();
         if ("HomeFragment".equals(simpleName) ||
-                "TweetFragment".equals(simpleName) ||
+                "PandaLiveFragment".equals(simpleName) ||
                 "FindFragment".equals(simpleName) ||
                 "MyFragment".equals(simpleName)) {
 
