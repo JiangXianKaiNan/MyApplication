@@ -1,5 +1,9 @@
 package com.example.myapplication.module.panda_live.fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -54,9 +58,21 @@ public class PandaLiveFragment_Live extends BaseFragment implements PandaLiveCon
     private PandaLiveContract.PandaLiveView mPandaLiveView;
     private PandaLiveFragmentpagerAdapter adapter;
     private List<Fragment> list;
-    private String flv1 = "http://ipanda.vtime.cntv.cloudcdn.net:8000/live/flv/channel54?AUTH=e6wH+irSHbGV6vSASn9wxqzWZ5tk1JJED1f8RQpGx+Nu7yNJFkfWWE7WE5JhUdG4c0UrfJgITMLysEh6GbX4Og==";
+    private String flv1 = "http://livechina.cntv.wscdns.com:8000/live/flv/channel369?AUTH=ampQYfwK3AJo9dmXUoWPN3EL/DUmZG+yaE5M62GwQ87KBW5Kb9s9eJ7ZSPASP2kj/0TTNkXxO7niJfrmPtl7RA==";
 
-
+    private BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String title = intent.getStringExtra("title");
+            flv1 = intent.getStringExtra("url");
+            liveTitle.setText("[正在直播]" + title);
+            IamgeVideo.setVideoURI(Uri.parse(flv1));
+            MediaController controller = new MediaController(getActivity());
+            IamgeVideo.setMediaController(controller);
+            IamgeVideo.requestFocus();
+            IamgeVideo.start();   //开始播放
+        }
+    };
     @Override
     protected void initData() {
         Log.e("Tag", "initData");
@@ -79,8 +95,11 @@ public class PandaLiveFragment_Live extends BaseFragment implements PandaLiveCon
 
     @Override
     protected void initView(View view) {
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("zhibo");
+        getActivity().registerReceiver(receiver,intentFilter);
         Log.e("URLURLURLURLURL",flv1);
-        IamgeVideo.setVideoURI(Uri.parse("http://livechina.cntv.wscdns.com:8000/live/flv/channel369?AUTH=ampQYfwK3AJo9dmXUoWPN3EL/DUmZG+yaE5M62GwQ87KBW5Kb9s9eJ7ZSPASP2kj/0TTNkXxO7niJfrmPtl7RA=="));
+        IamgeVideo.setVideoURI(Uri.parse(flv1));
         MediaController controller = new MediaController(getActivity());
         IamgeVideo.setMediaController(controller);
 

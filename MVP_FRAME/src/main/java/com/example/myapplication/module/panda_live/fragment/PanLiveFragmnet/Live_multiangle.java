@@ -1,5 +1,6 @@
 package com.example.myapplication.module.panda_live.fragment.PanLiveFragmnet;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -8,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseFragment;
@@ -35,6 +35,8 @@ public class Live_multiangle extends BaseFragment implements PandaLiveContract.P
     private List<MultiBean.ListBean>  liveBeen = new ArrayList<>();
     private PandaLiveContract.PandaLivePresenter mPandaLivPresenter;
     public String ids = "ipanda";
+    private String url;
+
     @Override
     public int getFragmentLayoutId() {
         Log.e("TAG","getFragmentLayoutId");
@@ -84,6 +86,11 @@ public class Live_multiangle extends BaseFragment implements PandaLiveContract.P
                 ids = liveBeen.get(position).getId();
                 Log.e("ididididid====",ids);
                 initData();
+                Intent intent = new Intent();
+                intent.putExtra("title",liveBeen.get(position).getTitle());
+                intent.putExtra("url",url);
+                intent.setAction("zhibo");
+                getActivity().sendBroadcast(intent);
             }
         });
     }
@@ -96,8 +103,10 @@ public class Live_multiangle extends BaseFragment implements PandaLiveContract.P
     @Override
     public void setLiveListData(LiveListBean liveListBean) {
     if(liveListBean!=null){
+    url = liveListBean.getFlv_url().getFlv2();
     Log.e("ididididid",liveListBean.toString());
-    Toast.makeText(getActivity(), liveListBean.getFlv_url().getFlv2(), Toast.LENGTH_SHORT).show();
+
+//    Toast.makeText(getActivity(), liveListBean.getFlv_url().getFlv2(), Toast.LENGTH_SHORT).show();
 
 }
     }
