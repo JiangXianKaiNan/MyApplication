@@ -5,6 +5,7 @@ import com.example.myapplication.model.bean.BaDaLingBean;
 import com.example.myapplication.model.bean.HomeDataBean;
 import com.example.myapplication.model.bean.HomeVideoBean;
 import com.example.myapplication.model.bean.LiveChinaBean;
+import com.example.myapplication.model.bean.LiveListBean;
 import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.OriginalBean;
 import com.example.myapplication.model.bean.PandaBroadBean;
@@ -12,6 +13,7 @@ import com.example.myapplication.model.bean.PandaBroadTwoBean;
 import com.example.myapplication.model.bean.PandaFragmentlistData;
 import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.model.bean.RollRollVideoBean;
+import com.example.myapplication.model.bean.SidelookBean;
 import com.example.myapplication.model.bean.TableListBaen;
 import com.example.myapplication.model.bean.WinderfulBean;
 import com.example.myapplication.network.HttpFactory;
@@ -105,6 +107,16 @@ public class PandaChannelModelImp implements PandaChannelModel {
     @Override
     public void getPandaFragmentlistData(Map<String, String> map, MyCallBack<PandaFragmentlistData> callBack) {
         HttpFactory.create().get(Urls.PANDAFRAGMENTDATA, map, callBack);
+    }
+
+    @Override
+    public void getSidelookSidechattData(Map<String, String> map, MyCallBack<SidelookBean> callBack) {
+        HttpFactory.create().get(Urls.SISDELOOK, map, callBack);
+    }
+
+    @Override
+    public void getLiveListData(Map<String, String> map, MyCallBack<LiveListBean> liveListBean) {
+        HttpFactory.create().get(Urls.LIVEURL, map, liveListBean);
     }
 
 

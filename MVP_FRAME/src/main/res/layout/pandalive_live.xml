@@ -7,13 +7,17 @@
     app:layout_widthPercent="100%"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageView
-        android:src="@drawable/_no_img"
-        android:id="@+id/Iamge_video"
-        app:layout_heightPercent="56%"
+    <LinearLayout
+        app:layout_heightPercent="40%"
         app:layout_widthPercent="100%"
         android:layout_width="0dp"
-        android:layout_height="0dp" />
+        android:layout_height="0dp">
+        <io.vov.vitamio.widget.VideoView
+            android:id="@+id/Iamge_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
 
     <com.zhy.android.percent.support.PercentRelativeLayout
         android:layout_width="0dp"
@@ -55,11 +59,9 @@
     </com.zhy.android.percent.support.PercentRelativeLayout>
 
     <ScrollView
-        app:layout_heightPercent="77%"
-        app:layout_widthPercent="100%"
-        android:layout_width="0dp"
-        android:layout_height="0dp">
-        <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -89,16 +91,15 @@
                 android:layout_marginRight="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
             <com.example.myapplication.view.MViewpager
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
-                app:layout_heightPercent="60%"
-                app:layout_widthPercent="98%"
                 android:id="@+id/live_pager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/live_tablayout" />
-        </com.zhy.android.percent.support.PercentLinearLayout>
+                android:layout_height="820dp"
+                android:layout_below="@+id/live_tablayout"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp" />
+        </LinearLayout>
     </ScrollView>
 
 

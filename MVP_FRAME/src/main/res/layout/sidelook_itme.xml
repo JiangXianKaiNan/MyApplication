@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/White"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="央视网网友"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/textView2" />
+    <TextView
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:text="快看高清亲妈系列"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="2dp"
+        android:id="@+id/sidelook_titler"
+        android:layout_toLeftOf="@+id/textView4"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
+    <TextView
+        android:background="@color/dimgray"
+        android:textColor="@color/black"
+        android:text="177439楼"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="11dp"
+        android:layout_above="@+id/sidelook_titler"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
+        android:id="@+id/sidelook_lou" />
+    <TextView
+        android:text="07-21-2017"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sidelook_titler"
+        android:layout_alignBottom="@+id/sidelook_titler"
+        android:layout_alignRight="@+id/sidelook_lou"
+        android:layout_alignEnd="@+id/sidelook_lou"
+        android:id="@+id/textView4" />
+</RelativeLayout>

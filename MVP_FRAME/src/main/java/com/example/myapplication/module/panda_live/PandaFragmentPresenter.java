@@ -3,10 +3,14 @@ package com.example.myapplication.module.panda_live;
 import android.util.Log;
 
 import com.example.myapplication.model.PandaChannelModelImp;
+import com.example.myapplication.model.bean.LiveListBean;
 import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.model.bean.TableListBaen;
 import com.example.myapplication.network.MyCallBack;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 爱生活，爱代码
@@ -20,9 +24,10 @@ import com.example.myapplication.network.MyCallBack;
 public class PandaFragmentPresenter implements PandaLiveContract.PandaLivePresenter {
     private PandaLiveContract.PandaLiveView mPandaLiveView;
     private PandaChannelModelImp mPandaChannelModelImp;
-
-    public PandaFragmentPresenter(PandaLiveContract.PandaLiveView pandaLiveView) {
+    private String vsid = "ipanda";
+    public PandaFragmentPresenter(PandaLiveContract.PandaLiveView pandaLiveView, String vsid) {
         this.mPandaLiveView = pandaLiveView;
+        this.vsid = vsid;
         mPandaChannelModelImp = new PandaChannelModelImp();
         //实例化PandaLiveContract中的Presenter的
         mPandaLiveView.setPresenter(this);
@@ -64,6 +69,22 @@ public class PandaFragmentPresenter implements PandaLiveContract.PandaLivePresen
             @Override
             public void onSuccess(TableListBaen tableListBaen) {
                 mPandaLiveView.setPandatablelist(tableListBaen);
+            }
+
+            @Override
+            public void onFaile(String msg) {
+
+            }
+        });
+        Map<String,String> map =  new HashMap<>();
+        String id="pa://cctv_p2p_hd"+vsid;
+        map.put("channel",id);
+        Log.e("id2222",id);
+        map.put("client","androidapp");
+        mPandaChannelModelImp.getLiveListData(map, new MyCallBack<LiveListBean>() {
+            @Override
+            public void onSuccess(LiveListBean liveListBean) {
+                mPandaLiveView.setLiveListData(liveListBean);
             }
 
             @Override

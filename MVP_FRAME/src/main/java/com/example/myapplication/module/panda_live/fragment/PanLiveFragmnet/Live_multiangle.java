@@ -6,10 +6,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseFragment;
+import com.example.myapplication.model.bean.LiveListBean;
 import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.model.bean.TableListBaen;
@@ -29,9 +32,9 @@ public class Live_multiangle extends BaseFragment implements PandaLiveContract.P
 //    @BindView(R.id.multiangle_grid)
     GridView multiangleGrid;
     private GridViewMultiangleAdapter adapter;
-    private List<MultiBean.ListBean> liveBeen;
+    private List<MultiBean.ListBean>  liveBeen = new ArrayList<>();
     private PandaLiveContract.PandaLivePresenter mPandaLivPresenter;
-
+    public String ids = "ipanda";
     @Override
     public int getFragmentLayoutId() {
         Log.e("TAG","getFragmentLayoutId");
@@ -42,12 +45,14 @@ public class Live_multiangle extends BaseFragment implements PandaLiveContract.P
     protected void initView(View view) {
         Log.e("TAG","initView");
         multiangleGrid = (GridView) view.findViewById(R.id.multiangle_grid);
+
     }
 
     @Override
     protected void initData() {
         Log.e("TAG","initData");
-        mPandaLivPresenter = new PandaFragmentPresenter(this);
+
+        mPandaLivPresenter = new PandaFragmentPresenter(this,ids);
         mPandaLivPresenter.start();
 
     }
@@ -70,15 +75,31 @@ public class Live_multiangle extends BaseFragment implements PandaLiveContract.P
     @Override
     public void setResultData(MultiBean multiBean) {
         Log.e("TAG","setResultData");
-        liveBeen = new ArrayList<>();
         liveBeen.addAll(multiBean.getList());
         adapter = new GridViewMultiangleAdapter(getActivity(),liveBeen);
         multiangleGrid.setAdapter(adapter);
+        multiangleGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ids = liveBeen.get(position).getId();
+                Log.e("ididididid====",ids);
+                initData();
+            }
+        });
     }
 
     @Override
     public void setPandatablelist(TableListBaen listBaen) {
 
+    }
+
+    @Override
+    public void setLiveListData(LiveListBean liveListBean) {
+    if(liveListBean!=null){
+    Log.e("ididididid",liveListBean.toString());
+    Toast.makeText(getActivity(), liveListBean.getFlv_url().getFlv2(), Toast.LENGTH_SHORT).show();
+
+}
     }
 
     @Override

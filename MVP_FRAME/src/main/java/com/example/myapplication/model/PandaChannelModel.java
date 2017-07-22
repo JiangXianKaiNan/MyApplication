@@ -4,6 +4,7 @@ import com.example.myapplication.model.bean.BaDaLingBean;
 import com.example.myapplication.model.bean.HomeDataBean;
 import com.example.myapplication.model.bean.HomeVideoBean;
 import com.example.myapplication.model.bean.LiveChinaBean;
+import com.example.myapplication.model.bean.LiveListBean;
 import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.OriginalBean;
 import com.example.myapplication.model.bean.PandaBroadBean;
@@ -11,6 +12,7 @@ import com.example.myapplication.model.bean.PandaBroadTwoBean;
 import com.example.myapplication.model.bean.PandaFragmentlistData;
 import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.model.bean.RollRollVideoBean;
+import com.example.myapplication.model.bean.SidelookBean;
 import com.example.myapplication.model.bean.TableListBaen;
 import com.example.myapplication.model.bean.WinderfulBean;
 import com.example.myapplication.network.MyCallBack;
@@ -118,4 +120,14 @@ public interface PandaChannelModel {
      * @param callBack
      */
     void getPandaFragmentlistData(Map<String,String> map, MyCallBack<PandaFragmentlistData> callBack);
+
+    /**
+     * 熊猫直播边看边聊
+     * prepage=20&nature=1&app=ipandaApp&page=1&itemid=zhiboye_chat
+     * @param callBack
+     */
+    void getSidelookSidechattData(Map<String,String> map, MyCallBack<SidelookBean> callBack);
+
+    void getLiveListData(Map<String,String> map, MyCallBack<LiveListBean> liveListBean);
+
 }

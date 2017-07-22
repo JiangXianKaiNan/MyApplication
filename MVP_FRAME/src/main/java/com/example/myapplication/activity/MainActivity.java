@@ -1,14 +1,11 @@
 package com.example.myapplication.activity;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-
 
 import com.example.myapplication.Home_Iv_Personal_Fragment;
 import com.example.myapplication.R;
@@ -22,9 +19,7 @@ import com.zhy.android.percent.support.PercentFrameLayout;
 import com.zhy.android.percent.support.PercentRelativeLayout;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import okhttp3.Request;
 
 public class MainActivity extends BaseActivity {
 
@@ -139,7 +134,7 @@ public class MainActivity extends BaseActivity {
         if ("HomeFragment".equals(simpleName) ||
                 "PandaLiveFragment".equals(simpleName) ||
                 "FindFragment".equals(simpleName) ||
-                "MyFragment".equals(simpleName)) {
+                "PandaFragment".equals(simpleName)) {
 
             finish();
         } else {

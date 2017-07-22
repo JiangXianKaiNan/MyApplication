@@ -20,6 +20,11 @@ import java.util.List;
 public class XRecyclerViewAdapter extends RecyclerView.Adapter {
     private Context context;
     private List<PandaFragmentlistData.VideoBean> videosetBeen;
+
+    public void setItemClickListener(OnItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
+
     public XRecyclerViewAdapter(Context context, List<PandaFragmentlistData.VideoBean> videosetBeen) {
         this.context = context;
         this.videosetBeen = videosetBeen;
@@ -44,17 +49,33 @@ public class XRecyclerViewAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         MyHolder holders= (MyHolder) holder;
         holders.Home_item_Rolling_body.setText(videosetBeen.get(position).getT());
         holders.Home_item_Rolling_bodytime.setText(videosetBeen.get(position).getPtime());
         holders.Home_item_Rolling_time.setText(videosetBeen.get(position).getLen());
         Glide.with(context).load(videosetBeen.get(position).getImg()).into(holders.home_item_Rolling_image);
+        if (itemClickListener!=null){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    itemClickListener.OnItemClickListener(position);
+                }
+            });
 
+        }
     }
 
     @Override
     public int getItemCount() {
         return videosetBeen.size();
+    }
+
+    private OnItemClickListener itemClickListener;
+    public interface OnItemClickListener {
+        void OnItemClickListener(int position);
+    }
+    public void setonclick(OnItemClickListener itemClickListener){
+        this.itemClickListener = itemClickListener;
     }
 }
