@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MVP_FRAME/MVP_FRAME.iml" filepath="$PROJECT_DIR$/MVP_FRAME/MVP_FRAME.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MVP_FRAME/MVP_FRAME.iml" filepath="$PROJECT_DIR$/MVP_FRAME/MVP_FRAME.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
     </modules>
   </component>

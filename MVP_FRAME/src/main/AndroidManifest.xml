@@ -68,7 +68,8 @@
             android:name="UMENG_APPKEY"
             android:value="5970114b717c193cff00171d" />
 
-        <activity android:name=".activity.PandaVideo"></activity>
+        <activity android:name=".activity.PandaVideo"
+            android:screenOrientation="landscape"       ></activity>
     </application>
 
 </manifest>
