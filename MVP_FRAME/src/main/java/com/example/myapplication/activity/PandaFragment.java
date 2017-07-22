@@ -64,7 +64,7 @@ class PandaFragment extends BaseFragment {
                         liveBeen.addAll(live);
                             getActivity().runOnUiThread(new Runnable() {
                             @Override
-                            public void run() {
+                                    public void run() {
                                 myAdapter = new MyAdapter(getActivity(), liveBeen);
                                 xrecyclerView.setAdapter(myAdapter);
                                 myAdapter.setOnItem(new MyAdapter.OnItem() {
