@@ -2,6 +2,7 @@ package com.example.myapplication.model;
 
 import com.example.myapplication.constants.Urls;
 import com.example.myapplication.model.bean.BaDaLingBean;
+import com.example.myapplication.model.bean.HomeCCTVBean;
 import com.example.myapplication.model.bean.HomeDataBean;
 import com.example.myapplication.model.bean.HomeVideoBean;
 import com.example.myapplication.model.bean.LiveChinaBean;
@@ -31,10 +32,33 @@ import java.util.Map;
 
 public class PandaChannelModelImp implements PandaChannelModel {
 
+    /**
+     * 首页
+     * @param callBack
+     */
     @Override
     public void getHomeData(MyCallBack<HomeDataBean> callBack) {
         HttpFactory.create().get(Urls.HOMEURLALL, null, callBack);
+
     }
+
+    /**
+     * 首页-- 精彩一刻
+     * @param callBack
+     */
+    @Override
+    public void getWinderfulData(MyCallBack<HomeCCTVBean> callBack) {
+        HttpFactory.create().get(Urls.ORIGINALNEWS, null, callBack);
+    }
+
+
+
+    public void getWinderfulTwo(String url,MyCallBack<HomeCCTVBean> callBack) {
+        HttpFactory.create().get(url, null, callBack);
+    }
+
+
+
 
     @Override
     public void getRollVideoData(MyCallBack<RollRollVideoBean> callBack) {
@@ -84,15 +108,7 @@ public class PandaChannelModelImp implements PandaChannelModel {
     }
 
 
-    //TODO  可能有参数
-    @Override
-    public void getWinderfulData(MyCallBack<WinderfulBean> callBack) {
-        Map<String, String> pamrams = new HashMap<String, String>();
-        pamrams.put("", "");
-        pamrams.put("", "");
-        pamrams.put("", "");
-        HttpFactory.create().get(Urls.ORIGINALNEWS, pamrams, callBack);
-    }
+
 
     @Override
     public void getPandaLiveData(MyCallBack<PandaLiveBean> callBack) {

@@ -8,7 +8,9 @@
     <com.zhy.android.percent.support.PercentRelativeLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_heightPercent="22%"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_heightPercent="17%"
         app:layout_widthPercent="100%">
 
 
@@ -18,6 +20,7 @@
             android:layout_height="0dp"
             android:layout_marginLeft="5dp"
             android:src="@mipmap/ic_launcher"
+            android:scaleType="fitXY"
             app:layout_heightPercent="100%"
             app:layout_widthPercent="45%" />
 
@@ -27,6 +30,7 @@
             android:layout_alignParentBottom="true"
             android:src="@drawable/lpanda_bottom_gra"
             app:layout_heightPercent="20%"
+            android:layout_marginLeft="5dp"
             app:layout_widthPercent="20%" />
 
         <ImageView
@@ -43,11 +47,11 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="1dp"
             android:layout_marginLeft="24dp"
             android:text="00:35"
             android:textColor="@color/White"
-            app:layout_heightPercent="16%"
+            app:layout_heightPercent="15%"
             app:layout_widthPercent="20%" />
 
         <com.zhy.android.percent.support.PercentLinearLayout

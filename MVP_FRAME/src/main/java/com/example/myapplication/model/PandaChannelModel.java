@@ -1,6 +1,7 @@
 package com.example.myapplication.model;
 
 import com.example.myapplication.model.bean.BaDaLingBean;
+import com.example.myapplication.model.bean.HomeCCTVBean;
 import com.example.myapplication.model.bean.HomeDataBean;
 import com.example.myapplication.model.bean.HomeVideoBean;
 import com.example.myapplication.model.bean.LiveChinaBean;
@@ -19,6 +20,8 @@ import com.example.myapplication.network.MyCallBack;
 
 import java.util.Map;
 
+import okhttp3.Callback;
+
 /**
  * 爱生活，爱代码
  * 创建于：2017/7/18 11:27
@@ -35,6 +38,13 @@ public interface PandaChannelModel {
      * @param callBack
      */
     void getHomeData(MyCallBack<HomeDataBean> callBack);
+
+    /**
+     * 获取精彩一刻数据
+     * @param callBack
+     */
+    void getWinderfulData(MyCallBack<HomeCCTVBean> callBack);
+
 
     /**
      * 滚滚视频数据
@@ -97,11 +107,6 @@ public interface PandaChannelModel {
     void getBaDaLingData(MyCallBack<BaDaLingBean> callBack);
 
 
-    /**
-     * 获取精彩一刻数据
-     * @param callBack
-     */
-    void getWinderfulData(MyCallBack<WinderfulBean> callBack);
 
     /**
      * 熊猫直播

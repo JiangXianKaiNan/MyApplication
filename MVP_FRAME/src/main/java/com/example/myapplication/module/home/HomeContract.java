@@ -2,6 +2,7 @@ package com.example.myapplication.module.home;
 
 import com.example.myapplication.base.BasePresenter;
 import com.example.myapplication.base.BaseView;
+import com.example.myapplication.model.bean.HomeCCTVBean;
 import com.example.myapplication.model.bean.HomeDataBean;
 
 /**
@@ -15,13 +16,17 @@ public interface HomeContract {
 
     //View
     interface HomeView extends BaseView<HomePresenter> {
+
         void setResultData(HomeDataBean dataBean);
+        void setXX(HomeCCTVBean bean);
+
+
     }
 
 
     //Presenter
     interface HomePresenter extends BasePresenter {
-
+        String setAmazingData(String url);
     }
 
 

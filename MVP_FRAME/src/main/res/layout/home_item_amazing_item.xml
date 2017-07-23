@@ -1,57 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
     android:orientation="vertical">
 
-    <com.zhy.android.percent.support.PercentRelativeLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_widthPercent="50%"
-        app:layout_heightPercent="20%">
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="130dp"
+       >
 
 
         <ImageView
             android:id="@+id/Home_item_Amazing_image"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="200dp"
+            android:layout_height="130dp"
             android:layout_marginLeft="5dp"
-            app:layout_heightPercent="100%"
-            app:layout_widthPercent="100%"
+            android:scaleType="fitXY"
             android:src="@mipmap/ic_launcher" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/lpanda_bottom_gra" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="83dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="106dp"
             android:src="@drawable/home_play_icon" />
 
         <TextView
             android:id="@+id/Home_item_Amazing_timeLength"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="22dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="104dp"
             android:text="00:35"
             android:textColor="#fff" />
 
-    </com.zhy.android.percent.support.PercentRelativeLayout>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/Home_item_Amazing_Title"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_heightPercent="8%"
-        app:layout_widthPercent="50%"
+        android:layout_width="170dp"
+        android:layout_height="45dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="8dp"
         android:textSize="16sp"
@@ -59,10 +57,9 @@
 
     <TextView
         android:id="@+id/Home_item_Amazing_bodytime"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_heightPercent="5%"
-        app:layout_widthPercent="50%"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:text="2017-07-14" />
@@ -73,4 +70,4 @@
         android:layout_marginTop="10dp"
         android:background="#FFDCDADA" />
 
-</com.zhy.android.percent.support.PercentLinearLayout>
+</LinearLayout>

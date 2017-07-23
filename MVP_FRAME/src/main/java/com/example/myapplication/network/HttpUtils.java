@@ -1,5 +1,7 @@
 package com.example.myapplication.network;
 
+import android.util.Log;
+
 import com.example.myapplication.global.MyApp;
 import com.google.gson.Gson;
 
@@ -94,6 +96,7 @@ public class HttpUtils implements IHttp {
      * @return
      */
     private <T> T getGeneric(String jsonData, MyCallBack<T> callback) {
+//        Log.e("请求的数据", jsonData);
         Type[] types = callback.getClass().getGenericInterfaces();
         Type[] parameterTypes = ((ParameterizedType) types[0]).getActualTypeArguments();
         Type type = parameterTypes[0];

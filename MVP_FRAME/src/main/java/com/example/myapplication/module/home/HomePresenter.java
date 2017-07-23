@@ -2,6 +2,7 @@ package com.example.myapplication.module.home;
 
 import com.example.myapplication.base.BasePresenter;
 import com.example.myapplication.model.PandaChannelModelImp;
+import com.example.myapplication.model.bean.HomeCCTVBean;
 import com.example.myapplication.model.bean.HomeDataBean;
 import com.example.myapplication.network.MyCallBack;
 
@@ -41,5 +42,24 @@ public class HomePresenter implements HomeContract.HomePresenter {
             }
         });
 
+
+
+    }
+
+
+    @Override
+    public String setAmazingData(String url) {
+      modelImp.getWinderfulTwo(url, new MyCallBack<HomeCCTVBean>() {
+          @Override
+          public void onSuccess(HomeCCTVBean homeCCTVBean) {
+              homeView.setXX(homeCCTVBean);
+          }
+
+          @Override
+          public void onFaile(String msg) {
+
+          }
+      });
+        return null;
     }
 }

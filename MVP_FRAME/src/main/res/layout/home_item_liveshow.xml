@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="580dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="8dp"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:id="@+id/Home_item_liveshow"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center|left"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:text="@string/Homeitemlives"
         android:textColor="@color/HomeTitle"
@@ -16,15 +22,16 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:background="@color/darkgray" />
 
     <GridView
-        android:fastScrollEnabled="false"
         android:id="@+id/Home_item_GridView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:fastScrollEnabled="false"
         android:numColumns="3">
 
     </GridView>

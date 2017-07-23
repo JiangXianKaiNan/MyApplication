@@ -38,6 +38,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".module.home.activity.OriginalActivity" />
+        <activity android:name=".module.home.activity.HomeOriginalDetaliActivity" />
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.PandaActivity" />
         <activity android:name=".activity.Pandaparticulars" />
@@ -68,10 +72,12 @@
             android:name="UMENG_APPKEY"
             android:value="5970114b717c193cff00171d" />
 
-        <activity android:name=".activity.PandaVideo"
-            android:screenOrientation="landscape"       ></activity>
-        <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.PlayVideoActivity"
+        <activity
+            android:name=".activity.PandaVideo"
+            android:screenOrientation="landscape"></activity>
+        <!--<activity android:name=".activity.MainActivity" />-->
+        <activity
+            android:name=".activity.PlayVideoActivity"
             android:screenOrientation="landscape"></activity>
     </application>
 

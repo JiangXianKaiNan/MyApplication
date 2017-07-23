@@ -1,5 +1,6 @@
 package com.example.myapplication.activity;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,6 +16,7 @@ import com.example.myapplication.config.FragmentBuilder;
 import com.example.myapplication.global.MyApp;
 import com.example.myapplication.module.home.HomeFragment;
 import com.example.myapplication.module.panda_live.PandaLiveFragment;
+import com.example.myapplication.module.home.activity.OriginalActivity;
 import com.zhy.android.percent.support.PercentFrameLayout;
 import com.zhy.android.percent.support.PercentRelativeLayout;
 
@@ -81,6 +83,8 @@ public class MainActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.Home_Iv_Original:// 原创·互动
+                startActivity(new Intent(MainActivity.this,OriginalActivity.class));
+
                 break;
             case R.id.Home_Iv_Personal://个人中心
                 FragmentBuilder.getInstance().init().start(Home_Iv_Personal_Fragment.class).build();
