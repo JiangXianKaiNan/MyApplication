@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_up_data_name"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1D539D">
+
+        <ImageView
+            android:id="@+id/updata_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/personal_back_img"
+             />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="修改昵称"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/updata_baocun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:text="保存"
+            android:textSize="15dp"
+            android:textColor="@color/huise" />
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        app:layout_heightPercent="8%"
+        app:layout_widthPercent="87%">
+
+        <EditText
+            android:id="@+id/updata_et"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/info_et"
+            android:hint=""
+            android:textSize="13dp"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="100%" />
+
+        <ImageView
+            android:id="@+id/upda_gray"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:src="@drawable/delete_gray"
+            android:visibility="visible"
+            android:background="@drawable/login_edit"
+            app:layout_heightPercent="5%"
+            app:layout_widthPercent="5%" />
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:textSize="13dp"
+        android:text="用户昵称只能为汉字、字母、数字、下划线组成；长度为3-10个汉字（6-20个非汉字字符）；不能为空；不能有禁词；敏感词；不能重复"
+        app:layout_heightPercent="25%"
+        app:layout_widthPercent="87%" />
+</com.zhy.android.percent.support.PercentLinearLayout>

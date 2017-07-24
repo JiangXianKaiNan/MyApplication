@@ -17,22 +17,15 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
  */
 
 public class PanderVideo extends BaseActivity {
-
-
     @Override
     public int getActivityLayoutId() {
         return R.layout.pande_video;
     }
+    @Override
+    protected void initView() {}
 
     @Override
-    protected void initView() {
-
-    }
-
-    @Override
-    protected void initListener() {
-
-    }
+    protected void initListener() {}
     @Override
     protected void onPause() {
         super.onPause();
@@ -42,13 +35,8 @@ public class PanderVideo extends BaseActivity {
     protected void loadData() {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
-
         JCVideoPlayer jCVideoPlayer = (JCVideoPlayer) findViewById(R.id.videocontroller1);
         jCVideoPlayer.setUp(Urls.ROLLIMG, title);
         jCVideoPlayer.ivThumb.setImageResource(R.mipmap._no_img);
-
     }
-    
-
-
 }

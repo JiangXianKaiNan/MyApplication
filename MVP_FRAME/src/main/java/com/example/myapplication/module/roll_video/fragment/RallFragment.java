@@ -57,7 +57,6 @@ public class RallFragment extends BaseFragment implements RollContract.RollView 
     private List<RollRollVideoBean.BigImgBean> bigImg;
     private List<RollRollVideoBean.ListBean> listbean;
 
-
     @Override
     public int getFragmentLayoutId() {
         return R.layout.rall_fragment;
@@ -67,16 +66,13 @@ public class RallFragment extends BaseFragment implements RollContract.RollView 
     protected void initView(View view) {
     }
 
-
     @Override
     protected void initData() {
-
         mRollPresenter = new RollPresenter(this);
         xrecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         mRollPresenter.start();
         //xrecyclerView刷新方法
         shuxin();
-
     }
 
     //xrecyclerView刷新方法
@@ -86,14 +82,14 @@ public class RallFragment extends BaseFragment implements RollContract.RollView 
             public void onRefresh() {
                 final ProgressDialog dialog = new ProgressDialog(getActivity());
                 /** 窗口背景变暗*/
-                dimBackground(1.0f,0.5f);
+                dimBackground(1.0f, 0.5f);
                 progtessBerBtnId2.setVisibility(View.VISIBLE);
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         /** 窗口背景变亮*/
-                        dimBackground(0.5f,1.0f);
+                        dimBackground(0.5f, 1.0f);
                         progtessBerBtnId2.setVisibility(View.GONE);
                         xrecyclerView.refreshComplete();
                         xrecyclerView.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
@@ -111,22 +107,17 @@ public class RallFragment extends BaseFragment implements RollContract.RollView 
 
     @Override
     public void setParams(Bundle bundle) {
-
     }
-
-
 
     @Override
     public void setRollData(RollRollVideoBean dataBean) {
-
         bigImg = dataBean.getBigImg();
         listbean = dataBean.getList();
-        Log.e("TAG",bigImg.get(0).getImage().toString());
+        Log.e("TAG", bigImg.get(0).getImage().toString());
         myRecycler = new RallVideo_AD(getActivity(), dataBean.getList());
         xrecyclerView.setAdapter(myRecycler);
         myRecycler.notifyDataSetChanged();
-
-           /*
+        /*
         * 加载XRecyclerView头部布局
         * 并找到该文字图片ID
         * Glide、Text并加载
@@ -136,29 +127,24 @@ public class RallFragment extends BaseFragment implements RollContract.RollView 
         TextView biaot = (TextView) view.findViewById(R.id.biao_ti);
         Glide.with(getActivity()).load(bigImg.get(0).getImage().toString())
                 .into(headimg);
-        Log.e("TAGGG",bigImg.get(0).getImage().toString());
+        Log.e("TAGGG", bigImg.get(0).getImage().toString());
         biaot.setText(bigImg.get(0).getTitle());
         xrecyclerView.addHeaderView(view);
-
         //图片点击事件
         headimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getActivity(), PanderVideo.class);
+                Intent intent = new Intent(getActivity(), PanderVideo.class);
                 //标题传出去
-                intent.putExtra("title",bigImg.get(0).getTitle());
+                intent.putExtra("title", bigImg.get(0).getTitle());
                 getContext().startActivity(intent);
             }
         });
-
-
     }
 
     @Override
     public void setPresenter(RollContract.Presenter rollPresenter) {
-        mRollPresenter = rollPresenter;
-    }
-
+        mRollPresenter = rollPresenter;}
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // TODO: inflate a fragment view
@@ -166,7 +152,6 @@ public class RallFragment extends BaseFragment implements RollContract.RollView 
         unbinder = ButterKnife.bind(this, rootView);
         return rootView;
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -174,12 +159,12 @@ public class RallFragment extends BaseFragment implements RollContract.RollView 
     }
     /**
      * 调整窗口的透明度
+     *
      * @param from>=0&&from<=1.0f
      * @param to>=0&&to<=1.0f
-     *
-     * */
+     */
     private void dimBackground(final float from, final float to) {
-        final Window window =getActivity().getWindow();
+        final Window window = getActivity().getWindow();
         ValueAnimator valueAnimator = ValueAnimator.ofFloat(from, to);
         valueAnimator.setDuration(500);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {

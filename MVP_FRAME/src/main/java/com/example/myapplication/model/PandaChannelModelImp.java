@@ -1,5 +1,6 @@
 package com.example.myapplication.model;
 
+import com.example.myapplication.activity.LoginBean;
 import com.example.myapplication.constants.Urls;
 import com.example.myapplication.model.bean.BaDaLingBean;
 import com.example.myapplication.model.bean.HomeCCTVBean;
@@ -19,6 +20,7 @@ import com.example.myapplication.model.bean.TableListBaen;
 import com.example.myapplication.model.bean.WinderfulBean;
 import com.example.myapplication.network.HttpFactory;
 import com.example.myapplication.network.MyCallBack;
+import com.umeng.socialize.utils.Log;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -135,5 +137,15 @@ public class PandaChannelModelImp implements PandaChannelModel {
         HttpFactory.create().get(Urls.LIVEURL, map, liveListBean);
     }
 
+    @Override
+    public void getLoginData(String username, String password, String service, String from, MyCallBack<LoginBean> myCallBack) {
+        Map<String, String> params = new HashMap<>();
+        params.put("username",username);
+        params.put("password", password);
+        params.put("service", service);
+        params.put("from", from);
+        Log.e( "getLoginData: ",params.toString());
+        HttpFactory.create().post(Urls.LOGIN,params,myCallBack);
+    }
 
 }

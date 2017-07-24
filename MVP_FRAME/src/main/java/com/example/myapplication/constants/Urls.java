@@ -14,6 +14,8 @@ public class Urls {
 
     //首页--精彩一刻
     public static final String ORIGINALNEWS = "http://www.ipanda.com/kehuduan/shipinliebieye/jingcaiyike/index.json";
+    //登录
+    public static  final String LOGIN ="https://reg.cntv.cn/login/login.action";
 
 
     //滚滚视频

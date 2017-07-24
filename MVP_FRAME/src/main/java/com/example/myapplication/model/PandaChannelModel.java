@@ -1,5 +1,6 @@
 package com.example.myapplication.model;
 
+import com.example.myapplication.activity.LoginBean;
 import com.example.myapplication.model.bean.BaDaLingBean;
 import com.example.myapplication.model.bean.HomeCCTVBean;
 import com.example.myapplication.model.bean.HomeDataBean;
@@ -134,5 +135,6 @@ public interface PandaChannelModel {
     void getSidelookSidechattData(Map<String,String> map, MyCallBack<SidelookBean> callBack);
 
     void getLiveListData(Map<String,String> map, MyCallBack<LiveListBean> liveListBean);
-
+    //获取登录数据
+    void getLoginData(String username,String password,String service,String from,MyCallBack<LoginBean> myCallBack);
 }
