@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="#e6ebef"
+    android:layout_height="match_parent">
+<com.zhy.android.percent.support.PercentLinearLayout
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_heightPercent="25%"
+    app:layout_widthPercent="90%"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:weightSum="2"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="20dp"
+    >
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="5%"
+        app:layout_widthPercent="90%"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:weightSum="3"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp">
+        <CheckBox
+            android:id="@+id/dysfunction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="功能异常"
+            style="@style/CustomCheckBoxTheme"
+            android:layout_gravity="center"
+
+            />
+        <CheckBox
+            android:id="@+id/Contentproblem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="内容问题"
+            style="@style/CustomCheckBoxTheme"
+            android:layout_gravity="center"
+
+            />
+
+        <CheckBox
+            android:id="@+id/uinterface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="界面优化"
+            style="@style/CustomCheckBoxTheme"
+            android:layout_gravity="center"
+
+            />
+
+    </RadioGroup>
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="5%"
+        app:layout_widthPercent="90%"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:weightSum="3"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp">
+        <CheckBox
+            android:id="@+id/videoplayback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="视频播放"
+            style="@style/CustomCheckBoxTheme"
+            android:layout_gravity="center"
+
+            />
+        <CheckBox
+            android:id="@+id/Display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="显示异常"
+            style="@style/CustomCheckBoxTheme"
+            android:layout_gravity="center"
+
+            />
+
+        <CheckBox
+            android:id="@+id/other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="其他建议"
+style="@style/CustomCheckBoxTheme"
+            android:layout_gravity="center"
+
+            />
+
+    </RadioGroup>
+</com.zhy.android.percent.support.PercentLinearLayout>
+    <EditText
+        android:id="@+id/idea"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="50%"
+        app:layout_widthPercent="90%"
+      android:layout_gravity="center_horizontal"
+        android:background="#ffffff"
+        android:textSize="15dp"
+        android:hint="请留下您的宝贵意见"
+        android:gravity="start"
+        android:layout_marginTop="20dp"
+        />
+    <EditText
+        android:id="@+id/emile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="90%"
+        android:layout_gravity="center_horizontal"
+        android:background="#ffffff"
+        android:textSize="15dp"
+        android:hint="请输入您的邮箱，方便我们及时给您回复"
+        android:gravity="center_vertical"
+
+        android:layout_marginTop="20dp"
+        />
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        app:layout_heightPercent="15%"
+        app:layout_widthPercent="90%"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_butt"
+        android:text="提交"
+        android:textColor="#ffffff"
+    />
+</com.zhy.android.percent.support.PercentLinearLayout>

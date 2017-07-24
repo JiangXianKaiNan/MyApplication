@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#1f539e"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="100%">
+
+        <ImageView
+            android:id="@+id/forget_back"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/personal_back_img"
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="10%" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="忘记密码"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            app:layout_heightPercent="50%"
+            app:layout_widthPercent="50%"/>
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:text="只支持手机号注册用户找回密码"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_heightPercent="5%"
+        app:layout_widthPercent="95%" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/info_et"
+        android:hint="请输入注册时的手机号"
+        app:layout_heightPercent="8%"
+        android:textSize="16dp"
+        app:layout_widthPercent="87%" />
+    <TextView
+        android:id="@+id/forget_phone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="5%"
+        app:layout_widthPercent="90%"
+        android:textColor="#ea2000"
+        android:layout_marginLeft="25dp"
+        android:text=""
+        />
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="100%">
+
+        <EditText
+            android:id="@+id/tupian_yanzhang"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textSize="16dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/info_et"
+            android:hint="请输入图片验证码"
+            app:layout_heightPercent="90%"
+            app:layout_widthPercent="56%"
+
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:text="获取验证码"
+            android:textSize="17dp"
+            android:textColor="#ffffff"
+            app:layout_heightPercent="80%"
+            android:layout_gravity="center_vertical"
+            app:layout_widthPercent="30%" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+    <TextView
+        android:id="@+id/forget_tpyz"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="5%"
+        app:layout_widthPercent="90%"
+        android:textColor="#ea2000"
+        android:layout_marginLeft="25dp"
+        android:text=""
+        />
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="100%">
+
+        <EditText
+            android:id="@+id/duanxin_yanzhang"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="25dp"
+            android:textSize="16dp"
+            android:background="@drawable/info_et"
+            android:hint="请输入收到的验证码"
+            app:layout_heightPercent="90%"
+            app:layout_widthPercent="56%"
+
+            />
+
+        <Button
+            android:id="@+id/phone_but"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/login_butt"
+            android:text="获取验证码"
+            android:textColor="#ffffff"
+            app:layout_heightPercent="80%"
+            app:layout_widthPercent="30%" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+    <TextView
+        android:id="@+id/forget_dxyz"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="5%"
+        app:layout_widthPercent="90%"
+        android:textColor="#ea2000"
+        android:layout_marginLeft="25dp"
+        android:text=""
+        />
+    <EditText
+        android:id="@+id/register_pass"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="16dp"
+        android:background="@drawable/info_et"
+        android:hint="请设置新密码"
+        app:layout_heightPercent="8%"
+        app:layout_widthPercent="87%" />
+    <TextView
+        android:id="@+id/forget_czmm"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="5%"
+        app:layout_widthPercent="90%"
+        android:textColor="#ea2000"
+
+        android:layout_marginLeft="25dp"
+        android:text=""
+        />
+
+    <Button
+        android:id="@+id/forget_but"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        app:layout_heightPercent="12%"
+        app:layout_widthPercent="90%"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_butt"
+        android:text="找回密码"
+        android:textColor="#ffffff"
+        />
+
+</com.zhy.android.percent.support.PercentLinearLayout>

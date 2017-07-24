@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/share_it_background"
+    android:orientation="vertical">
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#1D539D">
+
+        <ImageView
+            android:id="@+id/user_back"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/personal_back_img"
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="10%" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="用户反馈"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:id="@+id/register_tab"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_heightPercent="8%"
+        app:layout_widthPercent="100%"
+        app:tabIndicatorColor="#1D539D"
+        app:tabSelectedTextColor="#1D539D">
+
+        <Button
+            android:id="@+id/phone_zhuce"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:text="遇到的问题"
+            app:layout_heightPercent="100%" />
+
+        <Button
+            android:id="@+id/email_zhuce"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:text="常见问题"
+            app:layout_heightPercent="100%" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_heightPercent="0.5%"
+        app:layout_widthPercent="100%"
+        app:tabIndicatorColor="#1D539D"
+        app:tabSelectedTextColor="#1D539D">
+
+        <TextView
+            android:id="@+id/qqq"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark" />
+        <TextView
+            android:id="@+id/www"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#ffffff" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <com.zhy.android.percent.support.PercentFrameLayout
+        android:id="@+id/register_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="80%"
+        app:layout_widthPercent="100%">
+    </com.zhy.android.percent.support.PercentFrameLayout>
+</com.zhy.android.percent.support.PercentLinearLayout>

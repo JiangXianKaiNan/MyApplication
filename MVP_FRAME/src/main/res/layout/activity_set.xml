@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e6ebef"
+    android:orientation="vertical"
+>
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1f539e">
+
+        <ImageView
+            android:id="@+id/set_back"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/personal_back_img"
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="10%" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="设置"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="常用功能" />
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        app:layout_heightPercent="15%"
+        app:layout_widthPercent="95%">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="是否接受消息推送"
+            app:layout_heightPercent="5%"
+            app:layout_widthPercent="50%" />
+
+        <CheckBox
+            android:id="@+id/accept_box"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/kaiguan"
+            android:button="@null"
+            app:layout_heightPercent="8%"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            app:layout_widthPercent="13%"
+            />
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="0.5%"
+        app:layout_widthPercent="95%"
+        android:layout_gravity="center"
+        android:background="#22000000"
+        />
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+
+        android:background="#ffffff"
+        app:layout_heightPercent="15%"
+        app:layout_widthPercent="95%">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="自动播放下一集"
+            app:layout_heightPercent="5%"
+            app:layout_widthPercent="50%" />
+
+        <CheckBox
+            android:id="@+id/automatic_box"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/kaiguan"
+            android:button="@null"
+            app:layout_heightPercent="8%"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            app:layout_widthPercent="13%"
+            />
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="0.5%"
+        app:layout_widthPercent="95%"
+        android:layout_gravity="center"
+        android:background="#22000000"
+        />
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:id="@+id/clear"
+        android:background="#ffffff"
+        app:layout_heightPercent="15%"
+        app:layout_widthPercent="95%">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="清楚缓存"
+            app:layout_heightPercent="5%"
+            app:layout_widthPercent="50%" />
+
+        <TextView
+            android:id="@+id/laji"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="5%"
+            app:layout_widthPercent="15%"
+            android:text="21.2M"
+            android:layout_marginRight="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="10%"
+            android:background="@drawable/personal_delete_img"
+            android:layout_alignParentRight="true"
+            app:layout_widthPercent="10%"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"/>
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:text="其他" />
+
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/user_tickling"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        app:layout_heightPercent="15%"
+        app:layout_widthPercent="95%">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="用户反馈及帮助"
+            app:layout_heightPercent="5%"
+            app:layout_widthPercent="50%" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/personal_enter_img"
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="10%"
+            android:layout_centerVertical="true"/>
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="0.5%"
+        app:layout_widthPercent="95%"
+        android:layout_gravity="center"
+        android:background="#22000000"
+        />
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/upgrade"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:background="#ffffff"
+        app:layout_heightPercent="15%"
+        app:layout_widthPercent="95%">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="检测升级"
+            app:layout_heightPercent="5%"
+            app:layout_widthPercent="50%" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/personal_enter_img"
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="10%"
+            android:layout_centerVertical="true"/>
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="0.5%"
+        app:layout_widthPercent="95%"
+        android:layout_gravity="center"
+        android:background="#22000000"
+        />
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/goodreputation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:background="#ffffff"
+        app:layout_heightPercent="15%"
+        app:layout_widthPercent="95%">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="喜欢我们，给我好评"
+            app:layout_heightPercent="5%"
+            app:layout_widthPercent="50%" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/personal_enter_img"
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="10%"
+            android:layout_centerVertical="true"/>
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="0.5%"
+        app:layout_widthPercent="95%"
+        android:layout_gravity="center"
+        android:background="#22000000"
+        />
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/about_pandachannel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:background="#ffffff"
+        app:layout_heightPercent="15%"
+        app:layout_widthPercent="95%">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="关于熊猫频道"
+            app:layout_heightPercent="5%"
+            app:layout_widthPercent="50%" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/personal_enter_img"
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="10%"
+            android:layout_centerVertical="true"/>
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="0.5%"
+        app:layout_widthPercent="95%
+"
+        android:layout_gravity="center"
+        android:background="#22000000"
+        />
+</com.zhy.android.percent.support.PercentLinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_edit"
+    android:orientation="vertical">
+<TextView
+    android:id="@+id/message"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:gravity="center"
+    android:text="熊猫频道想要打开微信"
+    android:textColor="#000000"
+    />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:gravity="center"
+        android:background="@color/huise"
+        />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/quxiao_butt"
+            android:text="取消"
+            android:textColor="@color/huise"
+            android:background="@color/baise"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@color/huise"
+            />
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/quedin_butt"
+            android:text="确定"
+            android:textColor="@color/colorAccent"
+            android:background="@color/baise"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

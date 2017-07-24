@@ -67,7 +67,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
         FragmentBuilder.getInstance().init().start(HomeFragment.class).build();
-        HomeRlHomeTitle.setVisibility(View.VISIBLE);
+         HomeRlHomeTitle.setVisibility(View.VISIBLE);
 //     View   HomeRlLiveTitle.setVisibility(View.GONE);
 
     }
@@ -88,14 +88,16 @@ public class MainActivity extends BaseActivity {
             case R.id.Home_Iv_Original:// 原创·互动
                 break;
             case R.id.Home_Iv_Personal://个人中心
-                FragmentBuilder.getInstance().init().start(Home_Iv_Personal_Fragment.class).build();
+                Intent intent=new Intent(MainActivity.this,Personal_center_Activity.class);
+                startActivity(intent);
+                HomeRlHomeTitle.setVisibility(View.GONE);
+                HomeTvTitleName.setText("个人中心");
+                HomeRlLiveTitle.setVisibility(View.VISIBLE);
                 break;
             case R.id.Home_Iv_livePersonal:// 其他页面的个人中心
 
                 break;
             case R.id.HomeTab_home:// 首页
-
-
                 FragmentBuilder.getInstance().init().start(HomeFragment.class).build();
                 HomeRlHomeTitle.setVisibility(View.VISIBLE);
                 HomeRlLiveTitle.setVisibility(View.GONE);
