@@ -42,9 +42,9 @@
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.PandaActivity" />
         <activity android:name=".activity.Pandaparticulars" />
-        <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.SetActivity"/>
         <activity android:name=".activity.ShouCangActivity" />
+        <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.User_FanKuai_Activity" />
         <activity android:name=".activity.Forget_Pass_Activity" />
         <activity android:name=".activity.HostoryActivity" />
@@ -88,6 +88,10 @@
         <!--<activity android:name=".activity.MainActivity" />-->
         <activity android:name=".activity.PlayVideoActivity"
             android:screenOrientation="landscape"></activity>
+        <activity android:name=".activity.UpData_Name_Activity"/>
+        <activity android:name=".activity.Personal_center_Activity"/>
+        <activity android:name=".activity.Personal_Message_Activity"/>
+        <activity android:name=".activity.Personal_Message_Activity"/>
     </application>
 
 </manifest>
