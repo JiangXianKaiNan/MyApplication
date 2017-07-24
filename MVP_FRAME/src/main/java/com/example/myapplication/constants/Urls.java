@@ -17,7 +17,7 @@ public class Urls {
 
 
     //滚滚视频
-    public static final String ROLLVIDEO = BASEURL + "xmwh/index.json";
+    public static final String ROLLVIDEO = "http://www.ipanda.com/kehuduan/video/index.json";
     //直播中国
     public static final String LIVECHINAURL = "http://www.ipanda.com/kehuduan/liebiao/badaling/index.json";
     //熊猫播报
@@ -38,6 +38,11 @@ public class Urls {
     public static final String ORIGINAL = "http://www.ipanda.com/kehuduan/PAGE14501767715521482/index.json";
     // 直播中国-八达岭
     public static final String BADALING = BASEURL + "liebiao/badaling/index.json";
+
+    //滚滚视频详情视频
+    public static final String ROLLXQ = "http://api.cntv.cn/video/videolistById?n=10&vsid=VSET100284428835&p=";
+    public static final String ROLLIMG = "http://cntv.vod.cdn.myqcloud.com/flash/mp4video61/TMS/2017/07/20/03ddbe69099441b09961bd37d8a8f782_h264418000nero_aac32-1.mp4";
+    public static final String ROLLSP = "http://115.182.35.91/api/getVideoInfoForCBox.do?pid=3d92fae34dc14b2492de15d5dd122ac8";
 
 
     public static  final String PANDAFRAGMENTDATA = "http://api.cntv.cn/video/videolistById";
