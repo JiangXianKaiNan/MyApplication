@@ -99,10 +99,10 @@ public abstract class BaseFragment extends Fragment {
     public abstract void setParams(Bundle bundle);
 
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
+//    @Override
+//    public void onDestroyView() {
+//        super.onDestroyView();
+//        unbinder.unbind();
+//    }
 
 }

@@ -1,5 +1,6 @@
 package com.example.myapplication.module.panda_live;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -38,7 +39,7 @@ public class PandaLiveFragment extends BaseFragment implements PandaLiveContract
     @BindView(R.id.pandalive_viewpager)
     ViewPager pandaliveViewpager;
     PandaLiveContract.PandaLivePresenter mpandaLivePresenter;
-
+    private ProgressDialog progressDialog;
 
 
 
@@ -46,7 +47,7 @@ public class PandaLiveFragment extends BaseFragment implements PandaLiveContract
     protected void initData() {
         mpandaLivePresenter = new PandaFragmentPresenter(this,"");
         mpandaLivePresenter.start();
-
+        progressDialog.show();
     }
 
 
@@ -57,7 +58,8 @@ public class PandaLiveFragment extends BaseFragment implements PandaLiveContract
 
     @Override
     protected void initView(View view) {
-
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("正在加载数据...");
     }
 
     @Override
@@ -103,6 +105,7 @@ public class PandaLiveFragment extends BaseFragment implements PandaLiveContract
         pandaliveViewpager.setAdapter(adapter);
         pandaliveTabLayout.setupWithViewPager(pandaliveViewpager);
         pandaliveTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        progressDialog.dismiss();
     }
 
     @Override
