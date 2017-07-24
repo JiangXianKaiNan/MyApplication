@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/xrecycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="100%"
+        app:layout_widthPercent="100%"
+        android:background="@color/gainsboro"
+        ></com.jcodecraeer.xrecyclerview.XRecyclerView>
+
+    <ProgressBar
+        android:id="@+id/progtessBer_btn_id2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/huan_c"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+    />
+
+
+</com.zhy.android.percent.support.PercentRelativeLayout>

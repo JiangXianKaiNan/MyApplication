@@ -1,6 +1,7 @@
 package com.example.myapplication.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,10 +18,12 @@ import com.example.myapplication.global.MyApp;
 import com.example.myapplication.module.home.HomeFragment;
 import com.example.myapplication.module.panda_live.PandaLiveFragment;
 import com.example.myapplication.module.home.activity.OriginalActivity;
+import com.example.myapplication.module.roll_video.fragment.RallFragment;
 import com.zhy.android.percent.support.PercentFrameLayout;
 import com.zhy.android.percent.support.PercentRelativeLayout;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
@@ -107,10 +110,11 @@ public class MainActivity extends BaseActivity {
                 FragmentBuilder.getInstance().init().start(PandaLiveFragment.class).build();
                 break;
             case R.id.HomeTab_rollingvideo:// 滚滚视频
-
+                FragmentBuilder.getInstance().init().start(RallFragment.class).build();
                 HomeRlHomeTitle.setVisibility(View.GONE);
                 HomeTvTitleName.setText("滚滚视频");
                 HomeRlLiveTitle.setVisibility(View.VISIBLE);
+
                 break;
             case R.id.HomeTab_pandareport:// 熊猫播报
                 FragmentBuilder.getInstance().init().start(PandaFragment.class).build();

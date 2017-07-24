@@ -48,7 +48,9 @@ public class Pandaparticulars extends BaseActivity implements View.OnClickListen
         Intent intent=getIntent();
         id = intent.getStringExtra("id");
         title = intent.getStringExtra("title");
+        Log.e("TTT",title);
         url = intent.getStringExtra("url");
+        Log.e("TTT",url);
         fx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

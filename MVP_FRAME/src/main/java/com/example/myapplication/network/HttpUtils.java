@@ -43,7 +43,7 @@ public class HttpUtils implements IHttp {
     // http://www.qq.com?name=xxx&pwd=xxx;
     @Override
     public <T> void get(String url, Map<String, String> params, final MyCallBack<T> callBack) {
-        if (params != null) {
+    if (params != null) {
             StringBuffer sb = new StringBuffer(url);
             sb.append("?");
             Set<String> set = params.keySet();

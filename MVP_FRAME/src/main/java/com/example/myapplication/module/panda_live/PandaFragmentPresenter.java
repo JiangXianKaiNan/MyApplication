@@ -33,9 +33,6 @@ public class PandaFragmentPresenter implements PandaLiveContract.PandaLivePresen
         mPandaLiveView.setPresenter(this);
     }
 
-
-
-
     @Override
     public void start() {
         Log.e("-***----","456456456");

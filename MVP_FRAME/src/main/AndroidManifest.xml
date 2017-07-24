@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-sdk android:minSdkVersion="4" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -38,10 +39,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activity.MainActivity" />
-        <activity android:name=".module.home.activity.OriginalActivity" />
-        <activity android:name=".module.home.activity.HomeOriginalDetaliActivity" />
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.PandaActivity" />
         <activity android:name=".activity.Pandaparticulars" />
@@ -71,13 +68,15 @@
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="5970114b717c193cff00171d" />
+        <activity android:name=".module.roll_video.activity.PanderVideo"
+            android:screenOrientation="landscape"
+            />
 
-        <activity
-            android:name=".activity.PandaVideo"
-            android:screenOrientation="landscape"></activity>
+        <activity android:name=".module.roll_video.activity.PanderDetails"/>
+        <activity android:name=".activity.PandaVideo"
+            android:screenOrientation="landscape"       ></activity>
         <!--<activity android:name=".activity.MainActivity" />-->
-        <activity
-            android:name=".activity.PlayVideoActivity"
+        <activity android:name=".activity.PlayVideoActivity"
             android:screenOrientation="landscape"></activity>
     </application>
 
