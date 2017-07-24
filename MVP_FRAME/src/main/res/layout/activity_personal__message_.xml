@@ -15,14 +15,13 @@
 
         <ImageView
             android:id="@+id/information_back"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:background="@drawable/personal_back_img"
-            app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -42,7 +41,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:background="#ffffff"
-        app:layout_heightPercent="19%"
+        app:layout_heightPercent="15%"
         app:layout_widthPercent="95%">
 
 
@@ -59,23 +58,22 @@
 
         <ImageView
             android:id="@+id/information_head"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_toLeftOf="@+id/ima"
-            app:layout_heightPercent="15%"
-            app:layout_marginTopPercent="2%"
-            app:layout_widthPercent="15%" />
+            android:layout_centerVertical="true"
+             />
 
         <ImageView
             android:id="@+id/ima"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/personal_enter_img"
-            app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            android:src="@mipmap/personal_enter_img"
+            android:layout_marginRight="10dp"
+            />
 
     </com.zhy.android.percent.support.PercentRelativeLayout>
 
@@ -86,7 +84,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:background="#ffffff"
-        app:layout_heightPercent="15%"
+        app:layout_heightPercent="10%"
         app:layout_widthPercent="95%">
         <TextView
             android:id="@+id/textView"
@@ -99,30 +97,25 @@
             android:layout_toRightOf="@+id/personal_login_head"
             android:text="昵称"
             android:textColor="@color/heise"
-
             android:textSize="20dp" />
-
         <TextView
             android:id="@+id/user_name"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:layout_toStartOf="@+id/name_ima"
             android:gravity="right"
-            android:textSize="15dp"
-            app:layout_heightPercent="8%"
-            app:layout_widthPercent="35%" />
+            android:textColor="@color/heise" />
 
         <ImageView
             android:id="@+id/name_ima"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/personal_enter_img"
-            app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            android:src="@mipmap/personal_enter_img"
+            android:layout_marginRight="10dp"/>
     </com.zhy.android.percent.support.PercentRelativeLayout>
 
     <Button
@@ -134,6 +127,6 @@
         android:background="@drawable/login_butt"
         android:text="退出登录"
         android:textColor="#ffffff"
-        app:layout_heightPercent="10%"
+        app:layout_heightPercent="9%"
         app:layout_widthPercent="90%" />
 </com.zhy.android.percent.support.PercentLinearLayout>
