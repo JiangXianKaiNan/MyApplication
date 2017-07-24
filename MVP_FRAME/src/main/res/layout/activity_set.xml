@@ -18,14 +18,13 @@
 
         <ImageView
             android:id="@+id/set_back"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:background="@drawable/personal_back_img"
-            app:layout_heightPercent="10%"
-            app:layout_widthPercent="10%" />
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -65,8 +64,8 @@
 
         <CheckBox
             android:id="@+id/accept_box"
-            android:layout_width="50dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:background="@drawable/kaiguan"
             android:layout_marginRight="20dp"
@@ -102,8 +101,8 @@
 
         <CheckBox
             android:id="@+id/automatic_box"
-            android:layout_width="50dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:background="@drawable/kaiguan"
             android:button="@null"
@@ -143,14 +142,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="21.2M"
-            android:layout_marginRight="60dp"
+            android:layout_marginRight="50dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginTop="5dp"
             />
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="35dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:background="@drawable/personal_delete_img"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
@@ -186,8 +185,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:background="@drawable/personal_enter_img"
-
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"/>
     </com.zhy.android.percent.support.PercentRelativeLayout>
     <TextView
         android:layout_width="0dp"
@@ -218,10 +217,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
             android:background="@drawable/personal_enter_img"
             android:layout_centerVertical="true"/>
     </com.zhy.android.percent.support.PercentRelativeLayout>
-
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="0.5%"
+        app:layout_widthPercent="95%"
+        android:layout_gravity="center"
+        android:background="#22000000"
+        />
     <com.zhy.android.percent.support.PercentRelativeLayout
         android:id="@+id/goodreputation"
         android:layout_width="0dp"
@@ -243,6 +250,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
             android:background="@drawable/personal_enter_img"
             android:layout_centerVertical="true"/>
     </com.zhy.android.percent.support.PercentRelativeLayout>
@@ -283,6 +291,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
             android:background="@drawable/personal_enter_img"
             android:layout_centerVertical="true"/>
     </com.zhy.android.percent.support.PercentRelativeLayout>
