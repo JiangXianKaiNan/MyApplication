@@ -1,5 +1,7 @@
 package com.example.myapplication.network;
 
+import android.util.Log;
+
 import com.example.myapplication.global.MyApp;
 import com.google.gson.Gson;
 
@@ -41,7 +43,7 @@ public class HttpUtils implements IHttp {
     // http://www.qq.com?name=xxx&pwd=xxx;
     @Override
     public <T> void get(String url, Map<String, String> params, final MyCallBack<T> callBack) {
-        if (params != null) {
+    if (params != null) {
             StringBuffer sb = new StringBuffer(url);
             sb.append("?");
             Set<String> set = params.keySet();
@@ -94,6 +96,7 @@ public class HttpUtils implements IHttp {
      * @return
      */
     private <T> T getGeneric(String jsonData, MyCallBack<T> callback) {
+//        Log.e("请求的数据", jsonData);
         Type[] types = callback.getClass().getGenericInterfaces();
         Type[] parameterTypes = ((ParameterizedType) types[0]).getActualTypeArguments();
         Type type = parameterTypes[0];

@@ -2,9 +2,11 @@ package com.example.myapplication.model;
 
 import com.example.myapplication.constants.Urls;
 import com.example.myapplication.model.bean.BaDaLingBean;
+import com.example.myapplication.model.bean.HomeCCTVBean;
 import com.example.myapplication.model.bean.HomeDataBean;
 import com.example.myapplication.model.bean.HomeVideoBean;
 import com.example.myapplication.model.bean.LiveChinaBean;
+import com.example.myapplication.model.bean.LiveListBean;
 import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.OriginalBean;
 import com.example.myapplication.model.bean.PandaBroadBean;
@@ -12,6 +14,7 @@ import com.example.myapplication.model.bean.PandaBroadTwoBean;
 import com.example.myapplication.model.bean.PandaFragmentlistData;
 import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.model.bean.RollRollVideoBean;
+import com.example.myapplication.model.bean.SidelookBean;
 import com.example.myapplication.model.bean.TableListBaen;
 import com.example.myapplication.model.bean.WinderfulBean;
 import com.example.myapplication.network.HttpFactory;
@@ -29,10 +32,33 @@ import java.util.Map;
 
 public class PandaChannelModelImp implements PandaChannelModel {
 
+    /**
+     * 首页
+     * @param callBack
+     */
     @Override
     public void getHomeData(MyCallBack<HomeDataBean> callBack) {
         HttpFactory.create().get(Urls.HOMEURLALL, null, callBack);
+
     }
+
+    /**
+     * 首页-- 精彩一刻
+     * @param callBack
+     */
+    @Override
+    public void getWinderfulData(MyCallBack<HomeCCTVBean> callBack) {
+        HttpFactory.create().get(Urls.ORIGINALNEWS, null, callBack);
+    }
+
+
+
+    public void getWinderfulTwo(String url,MyCallBack<HomeCCTVBean> callBack) {
+        HttpFactory.create().get(url, null, callBack);
+    }
+
+
+
 
     @Override
     public void getRollVideoData(MyCallBack<RollRollVideoBean> callBack) {
@@ -82,15 +108,7 @@ public class PandaChannelModelImp implements PandaChannelModel {
     }
 
 
-    //TODO  可能有参数
-    @Override
-    public void getWinderfulData(MyCallBack<WinderfulBean> callBack) {
-        Map<String, String> pamrams = new HashMap<String, String>();
-        pamrams.put("", "");
-        pamrams.put("", "");
-        pamrams.put("", "");
-        HttpFactory.create().get(Urls.ORIGINALNEWS, pamrams, callBack);
-    }
+
 
     @Override
     public void getPandaLiveData(MyCallBack<PandaLiveBean> callBack) {
@@ -105,6 +123,16 @@ public class PandaChannelModelImp implements PandaChannelModel {
     @Override
     public void getPandaFragmentlistData(Map<String, String> map, MyCallBack<PandaFragmentlistData> callBack) {
         HttpFactory.create().get(Urls.PANDAFRAGMENTDATA, map, callBack);
+    }
+
+    @Override
+    public void getSidelookSidechattData(Map<String, String> map, MyCallBack<SidelookBean> callBack) {
+        HttpFactory.create().get(Urls.SISDELOOK, map, callBack);
+    }
+
+    @Override
+    public void getLiveListData(Map<String, String> map, MyCallBack<LiveListBean> liveListBean) {
+        HttpFactory.create().get(Urls.LIVEURL, map, liveListBean);
     }
 
 

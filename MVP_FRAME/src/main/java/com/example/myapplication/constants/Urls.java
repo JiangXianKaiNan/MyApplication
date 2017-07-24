@@ -11,6 +11,11 @@ public class Urls {
     public static final String BASEURL = "http://www.ipanda.com/kehuduan/";
     //首页数据 http://www.ipanda.com/kehuduan/PAGE14501749764071042/index.json
     public static final String HOMEURLALL = "http://www.ipanda.com/kehuduan/shouye/index.json";
+
+    //首页--精彩一刻
+    public static final String ORIGINALNEWS = "http://www.ipanda.com/kehuduan/shipinliebieye/jingcaiyike/index.json";
+
+
     //滚滚视频
     public static final String ROLLVIDEO = BASEURL + "xmwh/index.json";
     //直播中国
@@ -30,13 +35,16 @@ public class Urls {
     //首页视频
     public static final String HOMEVIDEOURL = "http://www.ipanda.com/kehuduan/shipinliebieye/xiongmaoguancha/index.json";
     //首页-原创互动
-    public static final String ORIGINAL = BASEURL + "PAGE14501767715521482/index.json";
+    public static final String ORIGINAL = "http://www.ipanda.com/kehuduan/PAGE14501767715521482/index.json";
     // 直播中国-八达岭
     public static final String BADALING = BASEURL + "liebiao/badaling/index.json";
-    //精彩一刻
-    public static final String ORIGINALNEWS = "http://api.cntv.cn/video/videolistById";
+
 
     public static  final String PANDAFRAGMENTDATA = "http://api.cntv.cn/video/videolistById";
 //  熊猫直播tablelist
     public static  final String TABLELIST = "http://www.ipanda.com/kehuduan/PAGE14501772263221982/index.json";
+//    边看边聊
+    public static  final String SISDELOOK = "http://newcomment.cntv.cn/comment/list";
+//    直播地址
+    public static final String LIVEURL = "http://vdn.live.cntv.cn/api2/live.do";
 }

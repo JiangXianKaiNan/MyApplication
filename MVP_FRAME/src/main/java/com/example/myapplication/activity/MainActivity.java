@@ -9,7 +9,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-
 import com.example.myapplication.Home_Iv_Personal_Fragment;
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseActivity;
@@ -18,13 +17,14 @@ import com.example.myapplication.config.FragmentBuilder;
 import com.example.myapplication.global.MyApp;
 import com.example.myapplication.module.home.HomeFragment;
 import com.example.myapplication.module.panda_live.PandaLiveFragment;
+import com.example.myapplication.module.home.activity.OriginalActivity;
+import com.example.myapplication.module.roll_video.fragment.RallFragment;
 import com.zhy.android.percent.support.PercentFrameLayout;
 import com.zhy.android.percent.support.PercentRelativeLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import okhttp3.Request;
 
 public class MainActivity extends BaseActivity {
 
@@ -86,6 +86,8 @@ public class MainActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.Home_Iv_Original:// 原创·互动
+                startActivity(new Intent(MainActivity.this,OriginalActivity.class));
+
                 break;
             case R.id.Home_Iv_Personal://个人中心
                 Intent intent=new Intent(MainActivity.this,Personal_center_Activity.class);
@@ -110,10 +112,11 @@ public class MainActivity extends BaseActivity {
                 FragmentBuilder.getInstance().init().start(PandaLiveFragment.class).build();
                 break;
             case R.id.HomeTab_rollingvideo:// 滚滚视频
-
+                FragmentBuilder.getInstance().init().start(RallFragment.class).build();
                 HomeRlHomeTitle.setVisibility(View.GONE);
                 HomeTvTitleName.setText("滚滚视频");
                 HomeRlLiveTitle.setVisibility(View.VISIBLE);
+
                 break;
             case R.id.HomeTab_pandareport:// 熊猫播报
                 FragmentBuilder.getInstance().init().start(PandaFragment.class).build();
@@ -141,7 +144,7 @@ public class MainActivity extends BaseActivity {
         if ("HomeFragment".equals(simpleName) ||
                 "PandaLiveFragment".equals(simpleName) ||
                 "FindFragment".equals(simpleName) ||
-                "MyFragment".equals(simpleName)) {
+                "PandaFragment".equals(simpleName)) {
 
             finish();
         } else {

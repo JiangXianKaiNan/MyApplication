@@ -7,6 +7,7 @@
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/Home_XRecyclerView"
         android:layout_width="match_parent"
+        android:background="#dedcdc"
         android:layout_height="match_parent">
 
     </com.jcodecraeer.xrecyclerview.XRecyclerView>

@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseFragment;
+import com.example.myapplication.model.bean.LiveListBean;
 import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.model.bean.TableListBaen;
@@ -43,7 +44,7 @@ public class PandaLiveFragment extends BaseFragment implements PandaLiveContract
 
     @Override
     protected void initData() {
-        mpandaLivePresenter = new PandaFragmentPresenter(this);
+        mpandaLivePresenter = new PandaFragmentPresenter(this,"");
         mpandaLivePresenter.start();
 
     }
@@ -102,5 +103,10 @@ public class PandaLiveFragment extends BaseFragment implements PandaLiveContract
         pandaliveViewpager.setAdapter(adapter);
         pandaliveTabLayout.setupWithViewPager(pandaliveViewpager);
         pandaliveTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+    }
+
+    @Override
+    public void setLiveListData(LiveListBean liveListBean) {
+
     }
 }
