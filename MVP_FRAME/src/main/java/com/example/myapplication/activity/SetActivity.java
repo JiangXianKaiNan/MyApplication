@@ -1,15 +1,21 @@
 package com.example.myapplication.activity;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -77,8 +83,6 @@ public class SetActivity extends BaseActivity {
             case R.id.set_back:
                 finish();
                 break;
-            case R.id.accept_box:
-                break;
             case R.id.automatic_box:
                 break;
             case R.id.clear:
@@ -139,5 +143,33 @@ public class SetActivity extends BaseActivity {
                 startActivity(intent1);
                 break;
         }
+        //推送通知
+        acceptBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b==true){
+                    NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(SetActivity.this);
+                    builder.setSmallIcon(R.drawable.logo_ipnda);//1.小图标，通过 setSmallIcon() 方法设置
+                    builder.setContentTitle("熊猫频道");//2.标题，通过 setContentTitle() 方法设置
+                    builder.setContentText("关注熊猫版本,更多乐趣无穷!");//3.内容，通过 setContentText() 方法设置
+                    builder.setTicker("这是一个通知");
+                    builder.setAutoCancel(true);
+                    builder.setDefaults(Notification.DEFAULT_ALL);
+                    builder.setAutoCancel(true);
+                    builder.setDefaults(Notification.DEFAULT_ALL);
+                   // Intent in = new Intent();
+                  //  in.setClass(MainActivity.this, Main2Activity.class);
+                  //  PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this, 0, in, PendingIntent.FLAG_UPDATE_CURRENT);
+
+                   // builder.setContentIntent(pendingIntent);
+
+                    manager.notify(32, builder.build());
+                }else{
+                    Toast.makeText(SetActivity.this, "取消推送", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
+
 }
