@@ -7,6 +7,7 @@ import com.example.myapplication.model.bean.HomeCCTVBean;
 import com.example.myapplication.model.bean.HomeDataBean;
 import com.example.myapplication.model.bean.HomeVideoBean;
 import com.example.myapplication.model.bean.LiveChinaBean;
+import com.example.myapplication.model.bean.LiveChinaContentBean;
 import com.example.myapplication.model.bean.LiveListBean;
 import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.OriginalBean;
@@ -17,7 +18,6 @@ import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.model.bean.RollRollVideoBean;
 import com.example.myapplication.model.bean.SidelookBean;
 import com.example.myapplication.model.bean.TableListBaen;
-import com.example.myapplication.model.bean.WinderfulBean;
 import com.example.myapplication.network.HttpFactory;
 import com.example.myapplication.network.MyCallBack;
 import com.umeng.socialize.utils.Log;
@@ -72,7 +72,11 @@ public class PandaChannelModelImp implements PandaChannelModel {
     public void getLiveData(MyCallBack<LiveChinaBean> callBack) {
         HttpFactory.create().get(Urls.LIVECHINAURL, null, callBack);
     }
-
+    //直播中国viewpager内容
+    @Override
+    public void getliveChinaContentData(String url,MyCallBack<LiveChinaContentBean> callBack) {
+        HttpFactory.create().get(url, null, callBack);
+    }
 
     @Override
     public void getPandaBroadData(String path, String primaryId, String serviceId, MyCallBack<PandaBroadBean> callBack) {

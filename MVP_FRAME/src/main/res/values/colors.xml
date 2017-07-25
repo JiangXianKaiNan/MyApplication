@@ -166,6 +166,6 @@
     <color name="live_item">#FFFFFF</color>
     <color name="live_item_bg">#E0E5EA</color>
     <color name="translucent_background">#603F51B5</color>
-    
+    <color name="toumingblue">#ee0000cd</color>
     
 </resources>

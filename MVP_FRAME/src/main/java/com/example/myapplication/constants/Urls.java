@@ -21,7 +21,7 @@ public class Urls {
     //滚滚视频
     public static final String ROLLVIDEO = "http://www.ipanda.com/kehuduan/video/index.json";
     //直播中国
-    public static final String LIVECHINAURL = "http://www.ipanda.com/kehuduan/liebiao/badaling/index.json";
+    public static final String LIVECHINAURL = "http://www.ipanda.com/kehuduan/PAGE14501775094142282/index.json";
     //熊猫播报
     public static final String PANDAREPORT = "http://api.cntv.cn/apicommon/index";
     //熊猫播报2

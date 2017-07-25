@@ -6,6 +6,7 @@ import com.example.myapplication.model.bean.HomeCCTVBean;
 import com.example.myapplication.model.bean.HomeDataBean;
 import com.example.myapplication.model.bean.HomeVideoBean;
 import com.example.myapplication.model.bean.LiveChinaBean;
+import com.example.myapplication.model.bean.LiveChinaContentBean;
 import com.example.myapplication.model.bean.LiveListBean;
 import com.example.myapplication.model.bean.MultiBean;
 import com.example.myapplication.model.bean.OriginalBean;
@@ -16,12 +17,9 @@ import com.example.myapplication.model.bean.PandaLiveBean;
 import com.example.myapplication.model.bean.RollRollVideoBean;
 import com.example.myapplication.model.bean.SidelookBean;
 import com.example.myapplication.model.bean.TableListBaen;
-import com.example.myapplication.model.bean.WinderfulBean;
 import com.example.myapplication.network.MyCallBack;
 
 import java.util.Map;
-
-import okhttp3.Callback;
 
 /**
  * 爱生活，爱代码
@@ -61,6 +59,7 @@ public interface PandaChannelModel {
      * @param callBack
      */
     void getLiveData(MyCallBack<LiveChinaBean> callBack);
+    void getliveChinaContentData(String url,MyCallBack<LiveChinaContentBean> callBack);
 
 
     /**
