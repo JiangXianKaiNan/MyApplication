@@ -227,10 +227,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
                 quedin_butt.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-             /*           OnekeyShare onekeyShare=new OnekeyShare();
-                        onekeyShare.show(LoginActivity.this);
-                        Platform platform = ShareSDK.getPlatform(Wechat.NAME);
-                        platform.authorize();*/
+
                         dialog.dismiss();
                     }
                 });
