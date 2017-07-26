@@ -41,7 +41,7 @@
         android:layout_marginTop="5dp"
         android:orientation="horizontal"
         android:weightSum="2"
-        app:layout_heightPercent="7%"
+        app:layout_heightPercent="8%"
         app:layout_widthPercent="100%"
         app:tabIndicatorColor="#1D539D"
         app:tabSelectedTextColor="#1D539D">

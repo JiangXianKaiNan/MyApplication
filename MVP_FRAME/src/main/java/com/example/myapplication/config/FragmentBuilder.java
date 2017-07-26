@@ -6,10 +6,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 
-
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseFragment;
 import com.example.myapplication.global.MyApp;
+
 
 
 /**
@@ -45,7 +45,7 @@ public class FragmentBuilder {
         return this;
     }
 
-    public FragmentBuilder start(Class<? extends BaseFragment> fragmentClass) {
+    public FragmentBuilder start(Class<? extends BaseFragment> fragmentClass){
 
 
         //使用fragment类名做Tag
@@ -81,6 +81,7 @@ public class FragmentBuilder {
     }
 
 
+
     public FragmentBuilder params(Bundle params) {
         if (params != null) {
             fragment.setParams(params);
@@ -103,10 +104,9 @@ public class FragmentBuilder {
     public BaseFragment build() {
         transaction.addToBackStack(simpleName);
         MyApp.lastfragment = fragment;
-
+//        isDefault = true;
         transaction.commit();
         return fragment;
     }
-
 
 }

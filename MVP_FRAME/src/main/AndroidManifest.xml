@@ -2,8 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-sdk android:minSdkVersion="4" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -24,7 +28,7 @@
     <application
         android:name=".global.MyApp"
         android:allowBackup="true"
-        android:icon="@drawable/logo_ipndas"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -37,12 +41,22 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity"
-            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             />
+        <activity android:name=".module.home.activity.OriginalActivity" />
+        <activity android:name=".module.home.activity.HomeOriginalDetaliActivity" />
+        <activity
+            android:name=".module.home.activity.HoneVideoActivity"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity
+            android:name=".module.home.activity.HoneLiveVideoActivity"
+            android:screenOrientation="landscape">
+        </activity>
         <activity android:name=".activity.Pandaparticulars" />
-        <activity android:name=".activity.SetActivity"/>
-        <activity android:name=".activity.ShouCangActivity" />
         <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.SetActivity" />
+        <activity android:name=".activity.ShouCangActivity" />
         <activity android:name=".activity.User_FanKuai_Activity" />
         <activity android:name=".activity.Forget_Pass_Activity" />
         <activity android:name=".activity.HostoryActivity" />
@@ -76,19 +90,21 @@
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="5970114b717c193cff00171d" />
-        <activity android:name=".module.roll_video.activity.PanderVideo"
-            android:screenOrientation="landscape"
-            />
 
-        <activity android:name=".module.roll_video.activity.PanderDetails"/>
-        <activity android:name=".activity.PandaVideo"
-            android:screenOrientation="landscape"       ></activity>
-        <activity android:name=".activity.PlayVideoActivity"
+        <activity
+            android:name=".module.roll_video.activity.PanderVideo"
+            android:screenOrientation="landscape" />
+
+        <activity android:name=".module.roll_video.activity.PanderDetails" />
+        <activity
+            android:name=".activity.PandaVideo"
             android:screenOrientation="landscape"></activity>
-        <activity android:name=".activity.UpData_Name_Activity"/>
-        <activity android:name=".activity.Personal_center_Activity"/>
-        <activity android:name=".activity.Personal_Message_Activity"/>
-        <activity android:name=".activity.Personal_Message_Activity"/>
+        <!--<activity android:name=".activity.MainActivity" />-->
+        <activity
+            android:name=".activity.PlayVideoActivity"
+            android:screenOrientation="landscape"></activity>
+
+
     </application>
 
 </manifest>

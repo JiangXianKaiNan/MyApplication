@@ -19,17 +19,19 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+
 /**
  * Created by ASUS on 2017/7/19.
  */
 
 public class PandaLiveFragment_wonderful extends BaseFragment implements PandaFragmentDataContract.PandaLiveView {
 
-
+    @BindView(R.id.pandalive_wonderful_listview)
     XRecyclerView pandaliveWonderfulListview;
     private PandaFragmentDataContract.PandaLivePresenter mPandaLivPresenter;
     private XRecyclerViewAdapter adapter;
-    private List<PandaFragmentlistData.VideoBean> videosetBeen = new ArrayList<>();
+    private List<PandaFragmentlistData.VideoBean> videosetBeen = new ArrayList<>();;
     int P = 1;
     private String id;
     private String url;
@@ -38,7 +40,7 @@ public class PandaLiveFragment_wonderful extends BaseFragment implements PandaFr
     protected void initData() {
         Bundle bundle = getArguments();
         id = bundle.getString("id", "");
-        mPandaLivPresenter = new PandaDataListPresenter(this, id, P);
+        mPandaLivPresenter = new PandaDataListPresenter(this, id,P);
         mPandaLivPresenter.start();
 
     }
@@ -50,9 +52,8 @@ public class PandaLiveFragment_wonderful extends BaseFragment implements PandaFr
 
     @Override
     protected void initView(View view) {
-        pandaliveWonderfulListview = (XRecyclerView) view.findViewById(R.id.pandalive_wonderful_listview);
         adapter = new XRecyclerViewAdapter(getActivity(), videosetBeen);
-        pandaliveWonderfulListview.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
+        pandaliveWonderfulListview.setLayoutManager(new StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL));
         pandaliveWonderfulListview.setAdapter(adapter);
 
         pandaliveWonderfulListview.setLoadingListener(new XRecyclerView.LoadingListener() {
@@ -73,20 +74,21 @@ public class PandaLiveFragment_wonderful extends BaseFragment implements PandaFr
             @Override
             public void OnItemClickListener(int position) {
                 String substring = videosetBeen.get(position).getPtime().substring(0, 10).replace("-", "/");
-                if (id.equals("VSET100340574858")) {
+                if(id.equals("VSET100340574858")){
                     url = "http://cntv.vod.cdn.myqcloud.com/flash/mp4video61/TMS/" + substring + "/" + videosetBeen.get(position).getVid() + "_h264418000nero_aac32-1.mp4";
-                } else {
+                }else{
 
-                    if (id.equals("VSET100272959126")) {
+                    if(id.equals("VSET100272959126")){
                         url = "http://cntv.vod.cdn.myqcloud.com/flash/mp4video59/TMS/" + substring + "/" + videosetBeen.get(position).getVid() + "_h264418000nero_aac32.mp4";
-                    } else {
-                        if (id.equals("VSET100237714751")) {
+                    }
+                    else{
+                        if(id.equals("VSET100237714751")){
                             url = "http://vod.cntv.lxdns.com/flash/mp4video60/TMS/" + substring + "/" + videosetBeen.get(position).getVid() + "_h264418000nero_aac32.mp4";
-                        } else {
-                            if (id.equals("VSET100167308855")) {
+                        }else{
+                            if(id.equals("VSET100167308855")){
                                 url = "http://vod.cntv.lxdns.com/flash/mp4video60/TMS/" + substring + "/" + videosetBeen.get(position).getVid() + "_h264418000nero_aac32-1.mp4";
 
-                            } else {
+                            }else{
 
                                 url = "http://cntv.vod.cdn.myqcloud.com/flash/mp4video61/TMS/" + substring + "/" + videosetBeen.get(position).getVid() + "_h264418000nero_aac32.mp4";
                             }
@@ -103,11 +105,14 @@ public class PandaLiveFragment_wonderful extends BaseFragment implements PandaFr
 //                http://cntv.vod.cdn.myqcloud.com/flash/mp4video61/TMS/2017/04/09/00362cdfea104d7298feacfbe8b40549_h264418000nero_aac32-1.mp4
 
 
+
+
+
 //                http://cntv.vod.cdn.myqcloud.com/flash/mp4video61/TMS/2017/07/20/03ddbe69099441b09961bd37d8a8f782_h264418000nero_aac32-1.mp4
 //                http://cntv.vod.cdn.myqcloud.com/flash/mp4video61/TMS/2017/07/21/01180afca0f04fff881d3eec9fd1d96a_h264418000nero_aac32.mp4
                 Intent intent = new Intent(getActivity(), PlayVideoActivity.class);
-                intent.putExtra("url", url);
-                Log.e("url＝＝＝＝＝", url);
+                intent.putExtra("url",url);
+                Log.e("url＝＝＝＝＝",url);
                 getActivity().startActivity(intent);
             }
         });
@@ -124,15 +129,15 @@ public class PandaLiveFragment_wonderful extends BaseFragment implements PandaFr
     }
 
 
+
     @Override
     public void setPandaFragmentlistData(PandaFragmentlistData pandaFragmentlistData) {
-        if (pandaFragmentlistData.getVideo() != null) {
+        if(pandaFragmentlistData.getVideo()!=null){
             videosetBeen.addAll(pandaFragmentlistData.getVideo());
             adapter.notifyDataSetChanged();
-        } else {
+        }else{
             Toast.makeText(getActivity(), "别刷了哥,没数据了", Toast.LENGTH_SHORT).show();
         }
 
     }
-
 }

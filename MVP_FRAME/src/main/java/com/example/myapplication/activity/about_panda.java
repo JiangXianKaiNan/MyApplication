@@ -10,9 +10,13 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class about_panda extends BaseActivity {
+
+
+
+
     @Override
     public int getActivityLayoutId() {
-             return R.layout.activity_about_panda;
+        return R.layout.activity_about_panda;
     }
 
     @Override

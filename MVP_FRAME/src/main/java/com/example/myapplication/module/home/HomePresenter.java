@@ -47,19 +47,20 @@ public class HomePresenter implements HomeContract.HomePresenter {
     }
 
 
-    @Override
-    public String setAmazingData(String url) {
-      modelImp.getWinderfulTwo(url, new MyCallBack<HomeCCTVBean>() {
-          @Override
-          public void onSuccess(HomeCCTVBean homeCCTVBean) {
-              homeView.setXX(homeCCTVBean);
-          }
+//    @Override
+//    public String setAmazingData(String url) {
+//      modelImp.getWinderfulTwo(url, new MyCallBack<HomeCCTVBean>() {
+//          @Override
+//          public void onSuccess(HomeCCTVBean homeCCTVBean) {
+//              homeView.setXX(homeCCTVBean);
+//          }
+//
+//          @Override
+//          public void onFaile(String msg) {
+//
+//          }
+//      });
+//        return null;
+//    }
 
-          @Override
-          public void onFaile(String msg) {
-
-          }
-      });
-        return null;
-    }
 }

@@ -6,20 +6,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
    >
-    <android.support.percent.PercentRelativeLayout
+    <android.support.percent.PercentFrameLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#1D539D">
 
         <ImageView
             android:id="@+id/about_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
            android:src="@drawable/personal_back_img"
-            />
+            app:layout_heightPercent="10%"
+            app:layout_widthPercent="10%" />
 
         <TextView
             android:layout_width="match_parent"
@@ -30,7 +31,7 @@
             android:textSize="20dp"
             android:layout_centerVertical="true"
          />
-    </android.support.percent.PercentRelativeLayout>
+    </android.support.percent.PercentFrameLayout>
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -38,7 +39,7 @@
         app:layout_widthPercent="35%"
         android:background="@drawable/about_sign"
         android:layout_gravity="center"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="40dp"
         />
     <TextView
         android:layout_width="0dp"

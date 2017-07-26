@@ -7,21 +7,17 @@
     app:layout_widthPercent="100%"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<FrameLayout
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    app:layout_heightPercent="40%"
-    app:layout_widthPercent="100%">
-    <io.vov.vitamio.widget.CenterLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+    <LinearLayout
+        app:layout_heightPercent="40%"
+        app:layout_widthPercent="100%"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
         <io.vov.vitamio.widget.VideoView
             android:id="@+id/Iamge_video"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </io.vov.vitamio.widget.CenterLayout>
-</FrameLayout>
+    </LinearLayout>
+
 
     <com.zhy.android.percent.support.PercentRelativeLayout
         android:layout_width="0dp"

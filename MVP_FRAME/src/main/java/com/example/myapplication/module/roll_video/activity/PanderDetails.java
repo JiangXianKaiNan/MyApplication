@@ -1,12 +1,9 @@
 package com.example.myapplication.module.roll_video.activity;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -26,9 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
-import com.example.myapplication.activity.PlayVideoActivity;
 import com.example.myapplication.base.BaseActivity;
-import com.example.myapplication.constants.Urls;
 import com.example.myapplication.model.bean.PandaBroadTwoBean;
 import com.example.myapplication.module.roll_video.adapter.MoveXqAd;
 import com.example.myapplication.module.roll_video.base.MoveTwoBean;
@@ -60,6 +55,7 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
     JCVideoPlayer videocontroller1;
     @BindView(R.id.radioButton)
     CheckBox radioButton;
+
     @BindView(R.id.intro_lay)
     LinearLayout introLay;
     @BindView(R.id.xrecycler_view)
@@ -76,6 +72,9 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
     CheckBox collect;
     @BindView(R.id.rrr)
     PercentLinearLayout rrr;
+
+
+
     private ArrayList<Move_bean.VideoBean> list = new ArrayList<>();
     private MoveXqAd moveXqAd;
     private int pageIndex = 1;
@@ -116,83 +115,61 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            ConnectivityManager mConnectivityManager = (ConnectivityManager)PanderDetails.this
-                                    .getSystemService(Context.CONNECTIVITY_SERVICE);
-                            NetworkInfo mNetworkInfo = mConnectivityManager
-                                    .getActiveNetworkInfo();
-                            if (mNetworkInfo.isAvailable()) {
-                                //获取网络类型
-                                int netWorkType = mNetworkInfo.getType();
-                                //TYPE_WIFI状态  直接播放
-                                if (netWorkType == ConnectivityManager.TYPE_WIFI) {
-                                    Intent intent1 = new Intent(PanderDetails.this, PlayVideoActivity.class);
-                                    intent1.putExtra("url",url);
-                                    startActivity(intent1);
-                                } else if (netWorkType == ConnectivityManager.TYPE_MOBILE) {
-                                    android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(PanderDetails.this);  //先得到构造器
-                                    builder.setTitle("网络提示"); //设置标题
-                                    builder.setMessage("你是4G网络是否继续播放? 亲"); //设置内容
-                                    builder.setIcon(R.drawable.tab_panda_live_normal);//设置图标
-                                    builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialogInterface, int i) {
-                                            Intent intent1 = new Intent(PanderDetails.this, PlayVideoActivity.class);
-                                            intent1.putExtra("url",url);
-                                            startActivity(intent1);
-                                        }
-                                    });
-                                    builder.setNegativeButton("取消", new DialogInterface.OnClickListener() { //设置取消按钮
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            dialog.dismiss();
-                                            return;
-                                        }
-                                    });
-                                    //参数都设置完成了，创建并显示出来
-                                    builder.create().show();
-                                } else {
-                                    Toast.makeText(PanderDetails.this, "当前无网络", Toast.LENGTH_SHORT).show();
-                                }
-                            }
+                            jCVideoPlayer.setUp(url, moveTwoBean.getTitle());
+                            jCVideoPlayer.ivThumb.setBackgroundResource(R.mipmap._no_img);
                         }
                     });
                 }
+
                 @Override
-                public void onFaile(String msg) {}
+                public void onFaile(String msg) {
+
+                }
             });
         }
     };
     private JCVideoPlayer jCVideoPlayer;
+
     @Override
     public int getActivityLayoutId() {
         return R.layout.pander_details;
     }
+
     @Override
     protected void initView() {
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
         toobarTit.setText(intent.getStringExtra("tit"));
         jCVideoPlayer = (JCVideoPlayer) findViewById(R.id.videocontroller1);
+
+
     }
+
     @Override
     protected void initListener() {
 
     }
+
     @Override
     protected void onPause() {
         super.onPause();
         JCVideoPlayer.releaseAllVideos();
     }
+
     @Override
     protected void loadData() {
+
         //网络请求
         internet();
+
         //RadioButton展示栏目介绍
         RadioBut();
+
         //设置适配器
         xrecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         moveXqAd = new MoveXqAd(PanderDetails.this, list);
         xrecyclerView.setAdapter(moveXqAd);
+
         //上拉加载 下拉刷新
         xrecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
@@ -201,6 +178,7 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
                 list.clear();
                 internet();
             }
+
             @Override
             public void onLoadMore() {
 
@@ -211,10 +189,12 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
                         internet();
                         moveXqAd.notifyDataSetChanged();
                         xrecyclerView.refreshComplete();
+
                     }
                 }, 1000);
             }
         });
+
         collect.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -227,6 +207,7 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
                 }
             }
         });
+
         //点击条目时间
         moveXqAd.setOnItem(new MoveXqAd.OnItem() {
             @Override
@@ -238,13 +219,17 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
                 handler.sendMessage(message);
             }
         });
+
+
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
     }
+
     /*
     * 返回
     * 收藏
@@ -262,9 +247,13 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
                 fenxiang();
                 break;
         }
+
     }
+
 //网络请求
+
     private void internet() {
+
         String url = " http://api.cntv.cn/video/videolistById?p=" + pageIndex + "&serviceId=panda&n=10&vsid=" + id;
         HttpUtils.getInstance().get(url, null, new MyCallBack<Move_bean>() {
             @Override
@@ -283,12 +272,14 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
                     }
                 });
             }
+
             @Override
             public void onFaile(String msg) {
 
             }
         });
     }
+
     /*
        * 获取Toobar标题、栏目介绍
        * 并设置
@@ -308,6 +299,7 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
             }
         });
     }
+
     //分享
     private void fenxiang() {
         View inflate = LayoutInflater.from(PanderDetails.this).inflate(R.layout.layout_fenxiang, null);
@@ -328,6 +320,7 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
         weixin.setOnClickListener(this);
         pengyouquan.setOnClickListener(this);
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -384,6 +377,7 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
                             }
                         })
                         .show();
+
                 break;
             case R.id.weixin:
                 AlertDialog alertDialog1 = new AlertDialog.Builder(PanderDetails.this).setNegativeButton("取消", null)
@@ -426,16 +420,21 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
                 break;
         }
     }
+
     private UMShareListener umShareListener = new UMShareListener() {
         @Override
         public void onStart(SHARE_MEDIA platform) {
             //分享开始的回调
         }
+
         @Override
         public void onResult(SHARE_MEDIA platform) {
             Log.d("plat", "platform" + platform);
+
             Toast.makeText(PanderDetails.this, platform + " 分享成功啦", Toast.LENGTH_SHORT).show();
+
         }
+
         @Override
         public void onError(SHARE_MEDIA platform, Throwable t) {
             Toast.makeText(PanderDetails.this, platform + " 分享失败啦", Toast.LENGTH_SHORT).show();
@@ -443,12 +442,18 @@ public class PanderDetails extends BaseActivity implements View.OnClickListener 
                 Log.d("throw", "throw:" + t.getMessage());
             }
         }
+
         @Override
         public void onCancel(SHARE_MEDIA platform) {
-            Toast.makeText(PanderDetails.this, platform + " 分享取消了", Toast.LENGTH_SHORT).show();}
+            Toast.makeText(PanderDetails.this, platform + " 分享取消了", Toast.LENGTH_SHORT).show();
+        }
     };
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);}
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    }
+
+
 }

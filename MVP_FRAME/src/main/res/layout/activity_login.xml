@@ -62,7 +62,7 @@
     <com.zhy.android.percent.support.PercentLinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_heightPercent="12%"
+        app:layout_heightPercent="15%"
         app:layout_widthPercent="87%"
         android:background="#ffffff"
         android:layout_gravity="center_horizontal"
@@ -71,12 +71,17 @@
 
         >
         <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="100%"
             android:orientation="horizontal"
             android:background="#ffffff"
+            android:weightSum="3"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_marginRight="15dp"
-            android:layout_weight="3"
+            android:layout_weight="1"
             android:layout_marginLeft="20dp">
             <RadioButton
                 android:id="@+id/login_weixin"
@@ -102,6 +107,7 @@
                 android:id="@+id/login_weibo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:button="@null"
                 android:drawableTop="@drawable/login_sina"
@@ -135,7 +141,7 @@
         >
         <EditText
             android:clickable="true"
-             android:focusableInTouchMode="true"
+             android:focusableInTouchMode="false"
              android:id="@+id/num"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -187,7 +193,7 @@
         >
         <EditText
             android:clickable="true"
-            android:focusableInTouchMode="true"
+            android:focusableInTouchMode="false"
             android:id="@+id/pass"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -243,7 +249,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        app:layout_heightPercent="8%"
+        app:layout_heightPercent="12%"
         app:layout_widthPercent="90%"
         android:layout_marginTop="20dp"
         android:background="@drawable/login_butt"

@@ -1,7 +1,10 @@
 package com.example.myapplication.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.Process;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -56,7 +59,6 @@ public class MainActivity extends BaseActivity {
     private FragmentManager fragmentManager = getSupportFragmentManager();
 
 
-
     @Override
     public int getActivityLayoutId() {
         return R.layout.activity_main;
@@ -65,9 +67,47 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
         FragmentBuilder.getInstance().init().start(HomeFragment.class).build();
-         HomeRlHomeTitle.setVisibility(View.VISIBLE);
+        HomeRlHomeTitle.setVisibility(View.VISIBLE);
 //     View   HomeRlLiveTitle.setVisibility(View.GONE);
+        Log.e("MainActivity", ":->onCreate");
+    }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("MainActivity", ":->onStart");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e("MainActivity", ":->onRestart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("MainActivity", ":->onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("MainActivity", ":->onPause");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("MainActivity", ":->onStop");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.e("MainActivity", ":->onDestroy");
     }
 
     @Override
@@ -84,23 +124,24 @@ public class MainActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.Home_Iv_Original:// 原创·互动
-                startActivity(new Intent(MainActivity.this,OriginalActivity.class));
+                startActivity(new Intent(MainActivity.this, OriginalActivity.class));
 
                 break;
             case R.id.Home_Iv_Personal://个人中心
-                Intent intent=new Intent(MainActivity.this,Personal_center_Activity.class);
-                startActivity(intent);
                 HomeRlHomeTitle.setVisibility(View.GONE);
-                HomeTvTitleName.setText("个人中心");
                 HomeRlLiveTitle.setVisibility(View.VISIBLE);
+                Intent intent = new Intent(MainActivity.this, Personal_center_Activity.class);
+                startActivity(intent);
+//                HomeTvTitleName.setText("个人中心");
                 break;
             case R.id.Home_Iv_livePersonal:// 其他页面的个人中心
-
+                Intent intent1 = new Intent(MainActivity.this, Personal_center_Activity.class);
+                startActivity(intent1);
                 break;
             case R.id.HomeTab_home:// 首页
-                FragmentBuilder.getInstance().init().start(HomeFragment.class).build();
                 HomeRlHomeTitle.setVisibility(View.VISIBLE);
                 HomeRlLiveTitle.setVisibility(View.GONE);
+                FragmentBuilder.getInstance().init().start(HomeFragment.class).build();
                 break;
             case R.id.HomeTab_pandalive:// 熊猫直播
 
@@ -110,17 +151,16 @@ public class MainActivity extends BaseActivity {
                 FragmentBuilder.getInstance().init().start(PandaLiveFragment.class).build();
                 break;
             case R.id.HomeTab_rollingvideo:// 滚滚视频
-                FragmentBuilder.getInstance().init().start(RallFragment.class).build();
                 HomeRlHomeTitle.setVisibility(View.GONE);
                 HomeTvTitleName.setText("滚滚视频");
                 HomeRlLiveTitle.setVisibility(View.VISIBLE);
-
+                FragmentBuilder.getInstance().init().start(RallFragment.class).build();
                 break;
             case R.id.HomeTab_pandareport:// 熊猫播报
-                FragmentBuilder.getInstance().init().start(PandaFragment.class).build();
                 HomeRlHomeTitle.setVisibility(View.GONE);
                 HomeTvTitleName.setText("熊猫播报");
                 HomeRlLiveTitle.setVisibility(View.VISIBLE);
+                FragmentBuilder.getInstance().init().start(PandaFragment.class).build();
                 break;
             case R.id.HomeTab_livechian:// 直播中国
                 FragmentBuilder.getInstance().init().start(LiveChinaTabFragment.class).build();
@@ -143,7 +183,8 @@ public class MainActivity extends BaseActivity {
         if ("HomeFragment".equals(simpleName) ||
                 "PandaLiveFragment".equals(simpleName) ||
                 "FindFragment".equals(simpleName) ||
-                "PandaFragment".equals(simpleName)) {
+                "PandaFragment".equals(simpleName) ||
+                "LiveChinaTabFragment".equals(simpleName)) {
 
             finish();
         } else {

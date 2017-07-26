@@ -20,9 +20,7 @@ package io.vov.vitamio.widget;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Rect;
-import android.graphics.drawable.ColorDrawable;
 import android.media.AudioManager;
 import android.os.Build;
 import android.os.Handler;
@@ -93,26 +91,12 @@ public class MediaController extends FrameLayout {
   private long mDuration;
   private boolean mShowing;
   private boolean mDragging;
-
   private boolean mInstantSeeking = false;
   private boolean mFromXml = false;
   private ImageButton mPauseButton;
   private AudioManager mAM;
   private OnShownListener mShownListener;
   private OnHiddenListener mHiddenListener;
-
-  public MediaController(Context context,boolean fromXml,View container) {
-    super(context);
-    initController(context);
-    mFromXml = fromXml;
-    mRoot = makeControllerView();//这个地方的FrameLayout.LayoutpParams是因为布局文件中要把MediaController的视图作为childView加到一个FrameLayout中去
-    FrameLayout.LayoutParams p = new FrameLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);//想怎样布局MediaController就尽情的发挥这个LayoutParams吧
-    p.gravity = Gravity.BOTTOM;
-    mRoot.setLayoutParams(p);
-    ((FrameLayout)container).addView(mRoot);
-  }
-
-
   @SuppressLint("HandlerLeak")
   private Handler mHandler = new Handler() {
     @Override
@@ -354,12 +338,10 @@ public class MediaController extends FrameLayout {
 
         mAnchor.getLocationOnScreen(location);
         Rect anchorRect = new Rect(location[0], location[1], location[0] + mAnchor.getWidth(), location[1] + mAnchor.getHeight());
-        mWindow.setBackgroundDrawable(new ColorDrawable(Color.GRAY));
-        mWindow.setOutsideTouchable(true);
 
         mWindow.setAnimationStyle(mAnimStyle);
         setWindowLayoutType();
-        mWindow.showAtLocation(mAnchor, Gravity.NO_GRAVITY,mAnchor.getLeft(),mAnchor.getBottom()+5);
+        mWindow.showAtLocation(mAnchor, Gravity.NO_GRAVITY, anchorRect.left, anchorRect.bottom);
       }
       mShowing = true;
       if (mShownListener != null)

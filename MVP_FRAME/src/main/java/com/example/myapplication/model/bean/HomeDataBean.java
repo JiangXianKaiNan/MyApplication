@@ -16,6 +16,13 @@ public class HomeDataBean {
 
     private DataBean data;
 
+    @Override
+    public String toString() {
+        return "HomeDataBean{" +
+                "data=" + data +
+                '}';
+    }
+
     public DataBean getData() {
         return data;
     }
@@ -46,6 +53,21 @@ public class HomeDataBean {
         private CctvBean cctv;
         private List<BigImgBean> bigImg;
         private List<ListBeanXX> list;
+
+        @Override
+        public String toString() {
+            return "DataBean{" +
+                    "area=" + area +
+                    ", pandaeye=" + pandaeye +
+                    ", pandalive=" + pandalive +
+                    ", walllive=" + walllive +
+                    ", chinalive=" + chinalive +
+                    ", interactive=" + interactive +
+                    ", cctv=" + cctv +
+                    ", bigImg=" + bigImg +
+                    ", list=" + list +
+                    '}';
+        }
 
         public AreaBean getArea() {
             return area;
@@ -125,6 +147,16 @@ public class HomeDataBean {
             private List<?> lists;
             private List<?> topiclist;
 
+            @Override
+            public String toString() {
+                return "AreaBean{" +
+                        "listscroll=" + listscroll +
+                        ", listh=" + listh +
+                        ", lists=" + lists +
+                        ", topiclist=" + topiclist +
+                        '}';
+            }
+
             public List<?> getListscroll() {
                 return listscroll;
             }
@@ -168,6 +200,15 @@ public class HomeDataBean {
             private String title;
             private String pandaeyelogo;
             private List<ItemsBean> items;
+
+            @Override
+            public String toString() {
+                return "PandaeyeBean{" +
+                        "title='" + title + '\'' +
+                        ", pandaeyelogo='" + pandaeyelogo + '\'' +
+                        ", items=" + items +
+                        '}';
+            }
 
             public String getTitle() {
                 return title;
@@ -213,6 +254,20 @@ public class HomeDataBean {
                 private String pid;
                 private String vid;
                 private String order;
+
+                @Override
+                public String toString() {
+                    return "ItemsBean{" +
+                            "title='" + title + '\'' +
+                            ", bgcolor='" + bgcolor + '\'' +
+                            ", brief='" + brief + '\'' +
+                            ", url='" + url + '\'' +
+                            ", id='" + id + '\'' +
+                            ", pid='" + pid + '\'' +
+                            ", vid='" + vid + '\'' +
+                            ", order='" + order + '\'' +
+                            '}';
+                }
 
                 public String getTitle() {
                     return title;
@@ -289,6 +344,14 @@ public class HomeDataBean {
             private String title;
             private List<ListBean> list;
 
+            @Override
+            public String toString() {
+                return "PandaliveBean{" +
+                        "title='" + title + '\'' +
+                        ", list=" + list +
+                        '}';
+            }
+
             public String getTitle() {
                 return title;
             }
@@ -321,6 +384,18 @@ public class HomeDataBean {
                 private String id;
                 private String vid;
                 private String order;
+
+                @Override
+                public String toString() {
+                    return "ListBean{" +
+                            "image='" + image + '\'' +
+                            ", url='" + url + '\'' +
+                            ", title='" + title + '\'' +
+                            ", id='" + id + '\'' +
+                            ", vid='" + vid + '\'' +
+                            ", order='" + order + '\'' +
+                            '}';
+                }
 
                 public String getImage() {
                     return image;
@@ -381,6 +456,14 @@ public class HomeDataBean {
             private String title;
             private List<?> list;
 
+            @Override
+            public String toString() {
+                return "WallliveBean{" +
+                        "title='" + title + '\'' +
+                        ", list=" + list +
+                        '}';
+            }
+
             public String getTitle() {
                 return title;
             }
@@ -406,6 +489,14 @@ public class HomeDataBean {
 
             private String title;
             private List<ListBeanX> list;
+
+            @Override
+            public String toString() {
+                return "ChinaliveBean{" +
+                        "title='" + title + '\'' +
+                        ", list=" + list +
+                        '}';
+            }
 
             public String getTitle() {
                 return title;
@@ -439,6 +530,18 @@ public class HomeDataBean {
                 private String id;
                 private String vid;
                 private String order;
+
+                @Override
+                public String toString() {
+                    return "ListBeanX{" +
+                            "image='" + image + '\'' +
+                            ", url='" + url + '\'' +
+                            ", title='" + title + '\'' +
+                            ", id='" + id + '\'' +
+                            ", vid='" + vid + '\'' +
+                            ", order='" + order + '\'' +
+                            '}';
+                }
 
                 public String getImage() {
                     return image;
@@ -494,6 +597,14 @@ public class HomeDataBean {
             private List<?> interactiveone;
             private List<?> interactivetwo;
 
+            @Override
+            public String toString() {
+                return "InteractiveBean{" +
+                        "interactiveone=" + interactiveone +
+                        ", interactivetwo=" + interactivetwo +
+                        '}';
+            }
+
             public List<?> getInteractiveone() {
                 return interactiveone;
             }
@@ -521,6 +632,15 @@ public class HomeDataBean {
             private String title;
             private String listurl;
             private List<?> listlive;
+
+            @Override
+            public String toString() {
+                return "CctvBean{" +
+                        "title='" + title + '\'' +
+                        ", listurl='" + listurl + '\'' +
+                        ", listlive=" + listlive +
+                        '}';
+            }
 
             public String getTitle() {
                 return title;
@@ -569,6 +689,21 @@ public class HomeDataBean {
             private String pid;
             private String vid;
             private String order;
+
+            @Override
+            public String toString() {
+                return "BigImgBean{" +
+                        "image='" + image + '\'' +
+                        ", title='" + title + '\'' +
+                        ", url='" + url + '\'' +
+                        ", id='" + id + '\'' +
+                        ", type='" + type + '\'' +
+                        ", stype='" + stype + '\'' +
+                        ", pid='" + pid + '\'' +
+                        ", vid='" + vid + '\'' +
+                        ", order='" + order + '\'' +
+                        '}';
+            }
 
             public String getImage() {
                 return image;
@@ -655,6 +790,16 @@ public class HomeDataBean {
             private String title;
             private String type;
             private String order;
+
+            @Override
+            public String toString() {
+                return "ListBeanXX{" +
+                        "listUrl='" + listUrl + '\'' +
+                        ", title='" + title + '\'' +
+                        ", type='" + type + '\'' +
+                        ", order='" + order + '\'' +
+                        '}';
+            }
 
             public String getListUrl() {
                 return listUrl;

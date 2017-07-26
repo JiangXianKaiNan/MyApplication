@@ -14,12 +14,44 @@ public class Urls {
 
     //首页--精彩一刻
     public static final String ORIGINALNEWS = "http://www.ipanda.com/kehuduan/shipinliebieye/jingcaiyike/index.json";
-    //登录
-    public static  final String LOGIN ="https://reg.cntv.cn/login/login.action";
+    //熊猫播报详情；
+    public static final String HOMEDETALI = "http://vdn.apps.cntv.cn/api/getVideoInfoForCBox.do";
+
+    //直播秀场详情
+    public static final String ZHIBO1 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdipanda&client=androidapp";
+    public static final String ZHIBO2 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdxiongmao03&client=androidapp";
+    public static final String ZHIBO3 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdxiongmao07&client=androidapp";
+    public static final String ZHIBO4 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdxiongmao09&client=androidapp";
+    public static final String ZHIBO5 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdxiongmao05&client=androidapp";
+    public static final String ZHIBO6 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdxiongmao18&client=androidapp";
+    public static final String ZHIBO7 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdxiongmao11&client=androidapp";
+    public static final String ZHIBO8 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdxiongmao12&client=androidapp";
+    public static final String ZHIBO9 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdxiongmao15&client=androidapp";
+    //精彩一刻视频地址
+    public static final String JINGCAI1 = "http://115.182.9.189/api/getVideoInfoForCBox.do";
+    public static final String JINGCAI2 = "http://115.182.35.91/api/getVideoInfoForCBox.do";
+    public static final String JINGCAI3 = "http://115.182.9.189/api/getVideoInfoForCBox.do";
+    public static final String JINGCAI4 = "http://115.182.35.91/api/getVideoInfoForCBox.do";
+    //滚滚视频地址
+    public static final String GUNGUN1 = "http://115.182.35.91/api/getVideoInfoForCBox.do";
+    public static final String GUNGUN2 = "http://115.182.35.91/api/getVideoInfoForCBox.do";
+    public static final String GUNGUN3 = "http://115.182.35.91/api/getVideoInfoForCBox.do";
+    public static final String GUNGUN4 = "http://115.182.35.91/api/getVideoInfoForCBox.do";
+    public static final String GUNGUN5 = "http://115.182.35.91/api/getVideoInfoForCBox.do";
+    //直播中国视频地址
+    public static final String CHINA1 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdzjjmht&client=androidapp";
+    public static final String CHINA2 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdfhgcdgm&client=androidapp";
+    public static final String CHINA3 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdztd&client=androidapp";
+    public static final String CHINA4 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdhsxksqj&client=androidapp";
+    public static final String CHINA5 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdhgsljtgpt&client=androidapp";
+    public static final String CHINA6 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdhlwxt&client=androidapp";
+    public static final String CHINA7 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdtaishan01&client=androidapp";
+    public static final String CHINA8 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdhssxf&client=androidapp";
+    public static final String CHINA9 = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hdemsarm&client=androidapp";
 
 
     //滚滚视频
-    public static final String ROLLVIDEO = "http://www.ipanda.com/kehuduan/video/index.json";
+    public static final String ROLLVIDEO = BASEURL + "xmwh/index.json";
     //直播中国
     public static final String LIVECHINAURL = "http://www.ipanda.com/kehuduan/PAGE14501775094142282/index.json";
     //熊猫播报
@@ -41,11 +73,7 @@ public class Urls {
     // 直播中国-八达岭
     public static final String BADALING = BASEURL + "liebiao/badaling/index.json";
 
-    //滚滚视频详情视频
-    public static final String ROLLXQ = "http://api.cntv.cn/video/videolistById?n=10&vsid=VSET100284428835&p=";
     public static final String ROLLIMG = "http://cntv.vod.cdn.myqcloud.com/flash/mp4video61/TMS/2017/07/20/03ddbe69099441b09961bd37d8a8f782_h264418000nero_aac32-1.mp4";
-    public static final String ROLLSP = "http://115.182.35.91/api/getVideoInfoForCBox.do?pid=3d92fae34dc14b2492de15d5dd122ac8";
-
 
     public static  final String PANDAFRAGMENTDATA = "http://api.cntv.cn/video/videolistById";
 //  熊猫直播tablelist

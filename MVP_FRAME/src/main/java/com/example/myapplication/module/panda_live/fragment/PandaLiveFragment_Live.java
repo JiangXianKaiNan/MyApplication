@@ -1,6 +1,5 @@
 package com.example.myapplication.module.panda_live.fragment;
 
-import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +9,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -34,6 +31,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.Unbinder;
+import io.vov.vitamio.widget.MediaController;
 import io.vov.vitamio.widget.VideoView;
 
 /**
@@ -54,12 +53,12 @@ public class PandaLiveFragment_Live extends BaseFragment implements PandaLiveCon
     TextView liveIntroduction;
     @BindView(R.id.Iamge_video)
     VideoView IamgeVideo;
+    Unbinder unbinder;
     private PandaLiveContract.PandaLivePresenter mPandaLivPresenter;
     private PandaLiveContract.PandaLiveView mPandaLiveView;
     private PandaLiveFragmentpagerAdapter adapter;
     private List<Fragment> list;
     private String flv1 = "http://livechina.cntv.wscdns.com:8000/live/flv/channel369?AUTH=ampQYfwK3AJo9dmXUoWPN3EL/DUmZG+yaE5M62GwQ87KBW5Kb9s9eJ7ZSPASP2kj/0TTNkXxO7niJfrmPtl7RA==";
-    /*ProgressDialog dialog;*/
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
@@ -67,21 +66,24 @@ public class PandaLiveFragment_Live extends BaseFragment implements PandaLiveCon
             String title = intent.getStringExtra("title");
             flv1 = intent.getStringExtra("url");
             liveTitle.setText("[正在直播]" + title);
-            showNormalDialog();
-
+            IamgeVideo.setVideoURI(Uri.parse(flv1));
+            MediaController controller = new MediaController(getActivity());
+            IamgeVideo.setMediaController(controller);
+            IamgeVideo.requestFocus();
+            IamgeVideo.start();   //开始播放
         }
     };
-
     @Override
     protected void initData() {
-
         Log.e("Tag", "initData");
-        mPandaLivPresenter = new PandaFragmentPresenter(this, "");
+        mPandaLivPresenter = new PandaFragmentPresenter(this,"");
         mPandaLivPresenter.start();
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("zhibo");
-        getActivity().registerReceiver(receiver, intentFilter);
-        Log.e("URLURLURLURLURL", flv1);
+        list = new ArrayList<>();
+        list.add(new Live_multiangle());
+        list.add(new Sidelook_sidechat());
+        adapter = new PandaLiveFragmentpagerAdapter(getChildFragmentManager(), list);
+        livePager.setAdapter(adapter);
+        liveTablayout.setupWithViewPager(livePager);
 
 
     }
@@ -91,62 +93,29 @@ public class PandaLiveFragment_Live extends BaseFragment implements PandaLiveCon
 
     }
 
-    private void showNormalDialog() {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        LayoutInflater inflater = getActivity().getLayoutInflater();
-        final View view = inflater.inflate(R.layout.dialoglayout, null);//获取自定义布局
-        builder.setView(view);
-        final AlertDialog dlg = builder.create();
-        dlg.show();
-        dlg.setCanceledOnTouchOutside(false);
-        view.findViewById(R.id.btn_yes).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                IamgeVideo.stopPlayback();
-                ProgressDialog progressBar = new ProgressDialog(getActivity());
-                progressBar.show();
-                if (IamgeVideo.isBuffering()) {
-                    progressBar.dismiss();
-                    IamgeVideo.setVideoURI(Uri.parse(flv1));
-                    IamgeVideo.requestFocus();
-                    IamgeVideo.start();
-                    //开始播放
-
-                }else {
-
-                }
-                dlg.dismiss();
-
-        }
-        });
-
-        view.findViewById(R.id.btn_no).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dlg.dismiss();
-            }
-        });
-
-    }
-
     @Override
     protected void initView(View view) {
-        /*dialog.show();*/
-        list = new ArrayList<>();
-        list.add(new Live_multiangle());
-        list.add(new Sidelook_sidechat());
-        adapter = new PandaLiveFragmentpagerAdapter(getChildFragmentManager(), list);
-        livePager.setAdapter(adapter);
-        liveTablayout.setupWithViewPager(livePager);
-        liveTablayout.setTabMode(TabLayout.GRAVITY_CENTER);
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("zhibo");
+        getActivity().registerReceiver(receiver,intentFilter);
+        Log.e("URLURLURLURLURL",flv1);
+        IamgeVideo.setVideoURI(Uri.parse(flv1));
+        MediaController controller = new MediaController(getActivity());
+        IamgeVideo.setMediaController(controller);
+
+        controller.setMediaPlayer(IamgeVideo);
+
+//        controller.setVisibility(View.INVISIBLE);
+
+        IamgeVideo.setMediaController(controller);
+
+        IamgeVideo.requestFocus();
+
+        IamgeVideo.start();   //开始播放
     }
 
     @Override
     public int getFragmentLayoutId() {
-        /*dialog =new ProgressDialog(getActivity());
-        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);// 设置水平进度条
-        dialog.setMessage("正在加载数据...");*/
         Log.e("Tag", "getFragmentLayoutId");
         return R.layout.pandalive_live;
     }
@@ -154,7 +123,6 @@ public class PandaLiveFragment_Live extends BaseFragment implements PandaLiveCon
 
     @Override
     public void setResultData(PandaLiveBean pandaLiveBean) {
-        /*dialog.dismiss();*/
         liveTitle.setText("[正在直播]" + pandaLiveBean.getLive().get(0).getTitle());
         liveIntroduction.setText(pandaLiveBean.getLive().get(0).getBrief());
         Log.e("iamge", pandaLiveBean.getLive().get(0).getUrl());

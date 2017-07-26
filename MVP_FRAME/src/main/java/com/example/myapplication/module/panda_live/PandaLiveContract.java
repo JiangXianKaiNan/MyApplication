@@ -30,7 +30,7 @@ public interface PandaLiveContract {
 
     //PandaLivePresenter
     interface PandaLivePresenter extends BasePresenter {
-
+        void setUid(String uid);
 
     }
 
