@@ -77,7 +77,11 @@ public class Live_multiangle extends BaseFragment implements PandaLiveContract.P
     @Override
     public void setResultData(MultiBean multiBean) {
         Log.e("TAG","setResultData");
-        liveBeen.addAll(multiBean.getList());
+        if(multiBean.getList()!=null){
+
+            liveBeen.addAll(multiBean.getList());
+        }
+        Log.e("TAG","setResultData2");
         adapter = new GridViewMultiangleAdapter(getActivity(),liveBeen);
         multiangleGrid.setAdapter(adapter);
         multiangleGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {

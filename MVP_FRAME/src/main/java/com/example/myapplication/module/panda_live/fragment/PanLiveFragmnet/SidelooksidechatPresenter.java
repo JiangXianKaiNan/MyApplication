@@ -15,20 +15,21 @@ public class SidelooksidechatPresenter implements SidelooksidechatContract.Sidel
 
     private SidelooksidechatContract.SidelooksidechatView mPidelooksidechatview;
     private PandaChannelModelImp mPandaChannelModelImp;
-
-    public SidelooksidechatPresenter(SidelooksidechatContract.SidelooksidechatView mPidelooksidechatview) {
+    private int P;
+    public SidelooksidechatPresenter(SidelooksidechatContract.SidelooksidechatView mPidelooksidechatview, int p) {
         this.mPidelooksidechatview = mPidelooksidechatview;
+        this.P = p;
         mPandaChannelModelImp = new PandaChannelModelImp();
         mPidelooksidechatview.setPresenter(this);
     }
     @Override
     public void start() {
         Map<String,String> map = new HashMap<>();
-//prepage=20&nature=1&app=ipandaApp&page=1&itemid=zhiboye_chat
+
         map.put("prepage","20");
         map.put("nature","1");
         map.put("app","ipandaApp");
-        map.put("page","1");
+        map.put("page",P+"");
         map.put("itemid","zhiboye_chat");
         mPandaChannelModelImp.getSidelookSidechattData(map, new MyCallBack<SidelookBean>() {
             @Override

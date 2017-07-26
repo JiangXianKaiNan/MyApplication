@@ -51,13 +51,43 @@ public class PandaFragmentPresenter implements PandaLiveContract.PandaLivePresen
 
             }
         });
+        mPandaChannelModelImp.getMultiData(new MyCallBack<MultiBean>() {
+            @Override
+            public void onSuccess(MultiBean multiBean) {
+                mPandaLiveView.setResultData(multiBean);
+            }
 
+            @Override
+            public void onFaile(String msg) {
 
-    }
+            }
+        });
+        mPandaChannelModelImp.getTablelistData(new MyCallBack<TableListBaen>() {
+            @Override
+            public void onSuccess(TableListBaen tableListBaen) {
+                mPandaLiveView.setPandatablelist(tableListBaen);
+            }
 
-    @Override
-    public void setUid(String uid) {
+            @Override
+            public void onFaile(String msg) {
 
+            }
+        });
+        Map<String,String> map =  new HashMap<>();
+        String id="pa://cctv_p2p_hd"+vsid;
+        map.put("channel",id);
+        Log.e("id2222",id);
+        map.put("client","androidapp");
+        mPandaChannelModelImp.getLiveListData(map, new MyCallBack<LiveListBean>() {
+            @Override
+            public void onSuccess(LiveListBean liveListBean) {
+                mPandaLiveView.setLiveListData(liveListBean);
+            }
 
+            @Override
+            public void onFaile(String msg) {
+
+            }
+        });
     }
 }
