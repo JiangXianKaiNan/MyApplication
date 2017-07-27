@@ -2,13 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-sdk android:minSdkVersion="4" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -30,9 +25,9 @@
         android:allowBackup="true"
         android:icon="@drawable/logo_ipndas"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo_ipnda"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".activity.WelcmoeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,22 +36,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity"
-            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             />
-        <activity android:name=".module.home.activity.OriginalActivity" />
-        <activity android:name=".module.home.activity.HomeOriginalDetaliActivity" />
-        <activity
-            android:name=".module.home.activity.HoneVideoActivity"
-            android:screenOrientation="landscape">
-        </activity>
-        <activity
-            android:name=".module.home.activity.HoneLiveVideoActivity"
-            android:screenOrientation="landscape">
-        </activity>
         <activity android:name=".activity.Pandaparticulars" />
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.SetActivity" />
+        <activity android:name=".activity.SetActivity"/>
         <activity android:name=".activity.ShouCangActivity" />
+        <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.User_FanKuai_Activity" />
         <activity android:name=".activity.Forget_Pass_Activity" />
         <activity android:name=".activity.HostoryActivity" />
@@ -90,21 +75,19 @@
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="5970114b717c193cff00171d" />
+        <activity android:name=".module.roll_video.activity.PanderVideo"
+            android:screenOrientation="landscape"
+            />
 
-        <activity
-            android:name=".module.roll_video.activity.PanderVideo"
-            android:screenOrientation="landscape" />
-
-        <activity android:name=".module.roll_video.activity.PanderDetails" />
-        <activity
-            android:name=".activity.PandaVideo"
+        <activity android:name=".module.roll_video.activity.PanderDetails"/>
+        <activity android:name=".activity.PandaVideo"
+            android:screenOrientation="landscape"       ></activity>
+        <activity android:name=".activity.PlayVideoActivity"
             android:screenOrientation="landscape"></activity>
-        <!--<activity android:name=".activity.MainActivity" />-->
-        <activity
-            android:name=".activity.PlayVideoActivity"
-            android:screenOrientation="landscape"></activity>
-
-
+        <activity android:name=".activity.UpData_Name_Activity"/>
+        <activity android:name=".activity.Personal_center_Activity"/>
+        <activity android:name=".activity.Personal_Message_Activity"/>
+        <activity android:name=".activity.Personal_Message_Activity"/>
     </application>
 
 </manifest>

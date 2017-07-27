@@ -16,13 +16,11 @@ public interface RollContract {
     //View
     interface RollView extends BaseView<Presenter> {
         void setRollData(RollRollVideoBean dataBean);
-
     }
 
 
     //Presenter
     interface Presenter extends BasePresenter {
-
 
     }
 

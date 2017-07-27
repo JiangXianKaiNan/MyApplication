@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="功能异常"
-            style="@style/CustomCheckBoxTheme"
+
             android:layout_gravity="center"
 
             />
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="内容问题"
-            style="@style/CustomCheckBoxTheme"
+
             android:layout_gravity="center"
 
             />
@@ -54,12 +54,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="界面优化"
-            style="@style/CustomCheckBoxTheme"
+
             android:layout_gravity="center"
 
             />
 
     </RadioGroup>
+
     <RadioGroup
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -70,23 +71,25 @@
         android:weightSum="3"
         android:layout_weight="1"
         android:layout_marginLeft="20dp">
+
         <CheckBox
             android:id="@+id/videoplayback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="视频播放"
-            style="@style/CustomCheckBoxTheme"
+
             android:layout_gravity="center"
 
             />
+
         <CheckBox
             android:id="@+id/Display"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="显示异常"
-            style="@style/CustomCheckBoxTheme"
+
             android:layout_gravity="center"
 
             />
@@ -97,7 +100,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="其他建议"
-style="@style/CustomCheckBoxTheme"
             android:layout_gravity="center"
 
             />

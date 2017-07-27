@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-import static butterknife.ButterKnife.bind;
-
 /**
  * 爱生活，爱代码
  * 创建于：2017/7/18 09:35
@@ -26,7 +24,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(getFragmentLayoutId(), null);
-         unbinder = ButterKnife.bind(this, view);
+        ButterKnife.bind(this, view);
         return view;
     }
 
@@ -100,11 +98,11 @@ public abstract class BaseFragment extends Fragment {
      */
     public abstract void setParams(Bundle bundle);
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        unbinder.unbind();
-    }
 
+//    @Override
+//    public void onDestroyView() {
+//        super.onDestroyView();
+//        unbinder.unbind();
+//    }
 
 }

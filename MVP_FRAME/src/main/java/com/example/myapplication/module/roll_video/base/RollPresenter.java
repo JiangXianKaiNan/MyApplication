@@ -47,5 +47,4 @@ public class RollPresenter implements RollContract.Presenter {
 
     }
 
-
 }

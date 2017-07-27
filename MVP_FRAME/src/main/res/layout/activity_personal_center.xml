@@ -14,7 +14,7 @@
             android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:src="@drawable/personal_back_img"
+            android:src="@mipmap/personal_back_img"
             android:padding="3dp"
             android:layout_margin="3dp"/>
         <TextView
@@ -25,36 +25,43 @@
             android:textColor="@color/baise"
             android:text="个人中心"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+           />
     </RelativeLayout>
-<LinearLayout
-    android:id="@+id/login"
-    android:background="@color/baise"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    app:layout_heightPercent="15%"
-    app:layout_widthPercent="94%"
-    app:layout_marginLeftPercent="3%"
-    app:layout_marginTopPercent="3%"
-    android:orientation="horizontal">
-    <ImageView
-        android:padding="7dp"
-        android:layout_marginLeft="18dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:src="@drawable/personal_login_head"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-      android:layout_gravity="center_vertical"
-        android:text="点击登录"
-        android:layout_marginLeft="15dp"/>
-</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/login"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/baise"
+        android:orientation="horizontal"
+        app:layout_heightPercent="13%"
+        app:layout_marginLeftPercent="3%"
+        app:layout_marginTopPercent="3%"
+        app:layout_widthPercent="94%">
+
+        <ImageView
+            android:id="@+id/login_image"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+
+            android:padding="10dp"
+            android:src="@drawable/personal_login_head" />
+
+        <TextView
+            android:id="@+id/login_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:text="点击登录"
+            android:textColor="@color/heise"/>
+    </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/hostory"
         app:layout_widthPercent="94%"
-        app:layout_heightPercent="12%"
+        app:layout_heightPercent="10%"
         app:layout_marginLeftPercent="3%"
         app:layout_marginTopPercent="1.5%"
         android:layout_width="0dp"
@@ -62,23 +69,23 @@
        android:gravity="center_vertical"
         android:background="@color/baise">
         <ImageView
-            android:padding="7dp"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/personal_history_img"
+            android:src="@mipmap/personal_history_img"
             android:id="@+id/imageView" />
         <TextView
             android:id="@+id/textt"
-            android:padding="11dp"
+            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="观看历史"
+            android:textColor="@color/heise"
             android:layout_toEndOf="@+id/imageView"
+            android:layout_marginLeft="10dp"
             />
         <ImageView
-            android:padding="7dp"
-            android:layout_marginLeft="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/personal_enter_img"
@@ -89,7 +96,7 @@
     <RelativeLayout
         android:id="@+id/shoucang"
         app:layout_widthPercent="94%"
-        app:layout_heightPercent="12%"
+        app:layout_heightPercent="10%"
         app:layout_marginLeftPercent="3%"
         app:layout_marginTopPercent="1.5%"
         android:layout_width="0dp"
@@ -97,22 +104,24 @@
         android:gravity="center_vertical"
         android:background="@color/baise">
         <ImageView
-            android:padding="7dp"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/personal_shoucang_img"
+            android:src="@mipmap/personal_shoucang_img"
             android:id="@+id/imageView1" />
         <TextView
             android:id="@+id/textt1"
-            android:padding="11dp"
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="我的收藏"
+            android:textColor="@color/heise"
+            android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/imageView1"
             />
         <ImageView
-            android:padding="7dp"
+
             android:layout_marginLeft="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -124,7 +133,7 @@
     <RelativeLayout
         android:id="@+id/set"
         app:layout_widthPercent="94%"
-        app:layout_heightPercent="12%"
+        app:layout_heightPercent="10%"
         app:layout_marginLeftPercent="3%"
         app:layout_marginTopPercent="1.5%"
         android:layout_width="0dp"
@@ -132,22 +141,24 @@
         android:gravity="center_vertical"
         android:background="@color/baise">
         <ImageView
-            android:padding="7dp"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/personal_set_img"
+            android:src="@mipmap/personal_set_img"
             android:id="@+id/imageView2" />
         <TextView
             android:id="@+id/textt2"
-            android:padding="11dp"
+            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="设置"
+            android:layout_marginLeft="10dp"
             android:layout_toEndOf="@+id/imageView2"
+            android:textColor="@color/heise"
             />
         <ImageView
-            android:padding="7dp"
+
             android:layout_marginLeft="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

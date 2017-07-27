@@ -2,7 +2,6 @@ package com.example.myapplication.module.panda_live.fragment.PanLiveFragmnet;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseFragment;
@@ -26,7 +25,6 @@ public class Sidelook_sidechat extends BaseFragment implements SidelooksidechatC
     private SidelooksidechatContract.SidelooksidePresenter sidelooksidePresenter;
     private List<SidelookBean.DataBean.ContentBean> dataBeanList = new ArrayList<>();
     private SidelookXrecyclerAdapter adapter;
-    int P;
 
     @Override
     public int getFragmentLayoutId() {
@@ -38,25 +36,11 @@ public class Sidelook_sidechat extends BaseFragment implements SidelooksidechatC
         sidelookXrecycler.setLayoutManager(new MyStaggeredGridLayoutManager(1,MyStaggeredGridLayoutManager.VERTICAL));
         adapter =  new SidelookXrecyclerAdapter(getActivity(),dataBeanList);
         sidelookXrecycler.setAdapter(adapter);
-        sidelookXrecycler.setLoadingListener(new XRecyclerView.LoadingListener() {
-            @Override
-            public void onRefresh() {
-                sidelookXrecycler.refreshComplete();
-            }
-
-            @Override
-            public void onLoadMore() {
-                sidelookXrecycler.loadMoreComplete();
-                P++;
-                initData();
-                sidelookXrecycler.refreshComplete();
-            }
-        });
     }
 
     @Override
     protected void initData() {
-        sidelooksidePresenter = new SidelooksidechatPresenter(this,P);
+        sidelooksidePresenter = new SidelooksidechatPresenter(this);
         sidelooksidePresenter.start();
     }
 
@@ -71,12 +55,6 @@ public class Sidelook_sidechat extends BaseFragment implements SidelooksidechatC
 
     @Override
     public void setSidelookData(SidelookBean sidelookBean) {
-        if(sidelookBean.getData()!=null){
-
-            dataBeanList.addAll(sidelookBean.getData().getContent());
-            adapter.notifyDataSetChanged();
-        }else {
-            Toast.makeText(getActivity(), "别刷了哥,没数据了", Toast.LENGTH_SHORT).show();
-        }
+        dataBeanList.addAll(sidelookBean.getData().getContent());
     }
 }

@@ -18,7 +18,7 @@ public interface HomeContract {
     interface HomeView extends BaseView<HomePresenter> {
 
         void setResultData(HomeDataBean dataBean);
-//        void setXX(HomeCCTVBean bean);
+        void setXX(HomeCCTVBean bean);
 
 
     }
@@ -26,7 +26,7 @@ public interface HomeContract {
 
     //Presenter
     interface HomePresenter extends BasePresenter {
-//        String setAmazingData(String url);
+        String setAmazingData(String url);
     }
 
 

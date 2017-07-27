@@ -98,6 +98,8 @@
         android:id="@+id/Home_RadioGrop"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:gravity="center"
+        android:layout_gravity="bottom"
         android:orientation="horizontal"
         android:weightSum="5">
 

@@ -1,11 +1,10 @@
 package com.example.myapplication.module.panda_live.fragment;
 
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -18,7 +17,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseFragment;
@@ -60,47 +58,19 @@ public class PandaLiveFragment_Live extends BaseFragment implements PandaLiveCon
     private PandaLiveContract.PandaLiveView mPandaLiveView;
     private PandaLiveFragmentpagerAdapter adapter;
     private List<Fragment> list;
-    private boolean available = false ;
-
-//    private String flv1 = "http://livechina.cntv.wscdns.com:8000/live/flv/channel369?AUTH=ampQYfwK3AJo9dmXUoWPN3EL/DUmZG+yaE5M62GwQ87KBW5Kb9s9eJ7ZSPASP2kj/0TTNkXxO7niJfrmPtl7RA==";
+    private String flv1 = "http://livechina.cntv.wscdns.com:8000/live/flv/channel369?AUTH=ampQYfwK3AJo9dmXUoWPN3EL/DUmZG+yaE5M62GwQ87KBW5Kb9s9eJ7ZSPASP2kj/0TTNkXxO7niJfrmPtl7RA==";
     /*ProgressDialog dialog;*/
-private String flv1 ="";
-    private NetworkInfo mNetworkInfo;
-    private ConnectivityManager mConnectivityManager;
+
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-
             String title = intent.getStringExtra("title");
             flv1 = intent.getStringExtra("url");
-
             liveTitle.setText("[正在直播]" + title);
-            wangluopanduan();
+            showNormalDialog();
 
-       }
-    };
-
-
-    public void wangluopanduan(){
-        mConnectivityManager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        mNetworkInfo = mConnectivityManager.getActiveNetworkInfo();
-        Log.e("456456",""+mNetworkInfo);
-        if(mNetworkInfo==null){
-            Toast.makeText(getActivity(), "当前无网络", Toast.LENGTH_SHORT).show();
-        }else{
-            available = mNetworkInfo.isAvailable();
-
-                int netWorkType =mNetworkInfo.getType();
-                if(netWorkType==ConnectivityManager.TYPE_WIFI){
-                    IamgeVideo.setVideoURI(Uri.parse(flv1));
-                    IamgeVideo.requestFocus();
-                    IamgeVideo.start();
-                }else if(netWorkType==ConnectivityManager.TYPE_MOBILE){
-                    showNormalDialog();
-                }
         }
-    }
-
+    };
 
     @Override
     protected void initData() {
@@ -111,15 +81,10 @@ private String flv1 ="";
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("zhibo");
         getActivity().registerReceiver(receiver, intentFilter);
-        if(!flv1.equals("")){
-            wangluopanduan();
-        }else {
-            Toast.makeText(getActivity(), "当前网络地址为空", Toast.LENGTH_SHORT).show();
-        }
+        Log.e("URLURLURLURLURL", flv1);
+
 
     }
-
-
 
     @Override
     public void setParams(Bundle bundle) {
@@ -138,9 +103,19 @@ private String flv1 ="";
         view.findViewById(R.id.btn_yes).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IamgeVideo.setVideoURI(Uri.parse(flv1));
-                IamgeVideo.requestFocus();
-                IamgeVideo.start();
+                IamgeVideo.stopPlayback();
+                ProgressDialog progressBar = new ProgressDialog(getActivity());
+                progressBar.show();
+                if (IamgeVideo.isBuffering()) {
+                    progressBar.dismiss();
+                    IamgeVideo.setVideoURI(Uri.parse(flv1));
+                    IamgeVideo.requestFocus();
+                    IamgeVideo.start();
+                    //开始播放
+
+                }else {
+
+                }
                 dlg.dismiss();
 
         }
@@ -150,7 +125,6 @@ private String flv1 ="";
             @Override
             public void onClick(View v) {
                 dlg.dismiss();
-                return;
             }
         });
 
@@ -158,7 +132,7 @@ private String flv1 ="";
 
     @Override
     protected void initView(View view) {
-
+        /*dialog.show();*/
         list = new ArrayList<>();
         list.add(new Live_multiangle());
         list.add(new Sidelook_sidechat());
@@ -170,7 +144,9 @@ private String flv1 ="";
 
     @Override
     public int getFragmentLayoutId() {
-
+        /*dialog =new ProgressDialog(getActivity());
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);// 设置水平进度条
+        dialog.setMessage("正在加载数据...");*/
         Log.e("Tag", "getFragmentLayoutId");
         return R.layout.pandalive_live;
     }

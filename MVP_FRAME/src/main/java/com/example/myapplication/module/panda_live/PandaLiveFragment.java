@@ -48,7 +48,7 @@ public class PandaLiveFragment extends BaseFragment implements PandaLiveContract
         mpandaLivePresenter = new PandaFragmentPresenter(this,"");
         mpandaLivePresenter.start();
         progressDialog.show();
-}
+    }
 
 
     @Override

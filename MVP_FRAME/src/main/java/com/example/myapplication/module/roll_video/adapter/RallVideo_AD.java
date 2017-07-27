@@ -14,7 +14,6 @@ import com.example.myapplication.R;
 import com.example.myapplication.model.bean.RollRollVideoBean;
 import com.example.myapplication.module.roll_video.activity.PanderDetails;
 
-
 import java.util.List;
 
 /**
@@ -49,8 +48,6 @@ public class RallVideo_AD extends RecyclerView.Adapter{
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewTyp) {
         view = View.inflate(context, R.layout.rall_item,null);
-
-
         return new MyHolder(view);
     }
 

@@ -1,17 +1,13 @@
 package com.example.myapplication.module.home;
 
-import android.animation.ValueAnimator;
-import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ProgressBar;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseFragment;
@@ -19,18 +15,21 @@ import com.example.myapplication.global.MyApp;
 import com.example.myapplication.model.bean.HomeCCTVBean;
 import com.example.myapplication.model.bean.HomeDataBean;
 import com.example.myapplication.module.home.adapter.HomeAdapter;
+import com.example.myapplication.module.home.adapter.HomeAmazingAdapter;
 import com.example.myapplication.utils.GlideImage;
-import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+
+import static android.R.id.list;
 
 /**
  * 爱生活，爱代码
@@ -42,9 +41,6 @@ import butterknife.Unbinder;
 public class HomeFragment extends BaseFragment implements HomeContract.HomeView {
     @BindView(R.id.Home_XRecyclerView)
     XRecyclerView HomeXRecyclerView;
-    @BindView(R.id.Home_progtessBer)
-    ProgressBar HomeProgtessBer;
-
 
     private HomeContract.HomePresenter mHomePresenter;
     private List<Object> objList;
@@ -72,7 +68,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.HomeView 
      */
     @Override
     public void setResultData(HomeDataBean bean) {
-//        Log.e("请求到的数据", "bean:" + bean);
+//        Log.e("HomeFragment请求数据===", "bean:" + bean.getData().getPandaeye().getTitle());
         imageList = new ArrayList<>();
         objList = new ArrayList<>();
         HomeDataBean.DataBean data = bean.getData();
@@ -85,7 +81,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.HomeView 
         HomeXRecyclerView.setAdapter(homeAdapter);
         homeAdapter.notifyDataSetChanged();
 
-//        mHomePresenter.setAmazingData(data.getList().get(0).getListUrl());
+        mHomePresenter.setAmazingData(data.getList().get(0).getListUrl());
 
         List<HomeDataBean.DataBean.BigImgBean> bigImg = bean.getData().getBigImg();
         for (int i = 0; i < bigImg.size(); i++) {
@@ -101,6 +97,12 @@ public class HomeFragment extends BaseFragment implements HomeContract.HomeView 
                 .start();
     }
 
+    @Override
+    public void setXX(HomeCCTVBean bean) {
+        list = bean.getList();
+//        HomeAmazingAdapter adapter = new HomeAmazingAdapter(list, MyApp.mContext);
+    }
+
 
     @Override
     protected void initData() {
@@ -108,33 +110,22 @@ public class HomeFragment extends BaseFragment implements HomeContract.HomeView 
         //设置横向
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         HomeXRecyclerView.setLayoutManager(linearLayoutManager);
-        HomeXRecyclerView.setLoadingMoreEnabled(true);
+        HomeXRecyclerView.setLoadingMoreEnabled(false);
         HomeXRecyclerView.setPullRefreshEnabled(true);
         HomeXRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
-                final ProgressDialog dialog = new ProgressDialog(getActivity());
-                /** 窗口背景变暗*/
-                dimBackground(1.0f, 0.5f);
-                HomeProgtessBer.setVisibility(View.VISIBLE);
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
+                HomeXRecyclerView.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        dimBackground(0.5f, 1.0f);
-//                        HomeXRecyclerView.loadMoreComplete();
-                        HomeProgtessBer.setVisibility(View.GONE);
-                        HomeXRecyclerView.refreshComplete();
-                        HomeXRecyclerView.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
-                        dialog.dismiss();
-
+                        HomeXRecyclerView.loadMoreComplete();
                     }
-                }, 2000);
+                },2000);
             }
 
             @Override
             public void onLoadMore() {
-                HomeXRecyclerView.setNoMore(true);
+
             }
         });
 
@@ -157,27 +148,10 @@ public class HomeFragment extends BaseFragment implements HomeContract.HomeView 
 
     }
 
-    /**
-     * 调整窗口的透明度
-     *
-     * @param from>=0&&from<=1.0f
-     * @param to>=0&&to<=1.0f
-     */
-    private void dimBackground(final float from, final float to) {
-        final Window window = getActivity().getWindow();
-        ValueAnimator valueAnimator = ValueAnimator.ofFloat(from, to);
-        valueAnimator.setDuration(500);
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                WindowManager.LayoutParams params = window.getAttributes();
-                params.alpha = (Float) animation.getAnimatedValue();
-                window.setAttributes(params);
-            }
-        });
 
-        valueAnimator.start();
-    }
-
-
+//    @Override
+//    public void onDestroyView() {
+//        super.onDestroyView();
+//        unbinder.unbind();
+//    }
 }
